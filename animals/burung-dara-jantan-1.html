@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burung Dara Jantan (Columba livia) — Atlas Vertebrata</title>
+<meta name="description" content="Struktur anatomi Burung Dara Jantan (Columba livia) per sistem organ, dilengkapi dokumentasi 3 bagian foto dari praktikum anatomi perbandingan Kelompok 9.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Menjaga pembungkus dropdown agar sejajar secara horizontal di dalam .main-nav */
+  .main-nav .dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Membuat kontainer menu dropdown tersembunyi secara default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(244, 246, 238, 0.98);
+    backdrop-filter: blur(10px);
+    min-width: 240px;
+    border: 1px solid var(--line, #dbdfcf);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    margin-top: 2px;
+    z-index: 1000;
+  }
+
+  /* Menampilkan dropdown saat menu utama diarahkan atau diklik */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  /* Mengatur item link di dalam menu dropdown */
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--ink, #2d3732);
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: none !important;
+  }
+
+  /* Efek hover pada baris pilihan jantan/betina */
+  .dropdown-menu a:hover {
+    background: rgba(219, 223, 207, 0.5);
+    color: var(--ink, #1a231f);
+  }
+
+  /* Styling icon/logo jantan dan betina */
+  .gender-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .gender-badge.jantan {
+    background-color: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+  }
+  .gender-badge.betina {
+    background-color: rgba(236, 72, 153, 0.12);
+    color: #db2777;
+  }
+
+  /* Styling teks deskripsi kecil di dalam dropdown */
+  .dropdown-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .dropdown-meta .spec-title {
+    font-weight: 600;
+  }
+  .dropdown-meta .spec-desc {
+    font-size: 0.72rem;
+    color: #727a75;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7H20M4 12H20M4 17H20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-morph" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM5 20a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-stomach" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8V14a4 4 0 0 1 8 0v6c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-urogenital" viewBox="0 0 24 24"><path d="M12 21a7 7 0 0 0 7-7v-3a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-6 0v4H7a2 2 0 0 0-2 2v3a7 7 0 0 0 7 7z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../images/marmut/LOGO UNJ.png" class="brand-mark" alt="Logo UNJ">
+      <span class="brand-text">
+        <span class="name">Atlas Vertebrata</span>
+        <span class="sub">Struktur &amp; Perkembangan Hewan</span>
+      </span>
+    </a>
+    
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html">Beranda</a>
+      
+      <div class="dropdown">
+        <a href="#" class="nav-link">Ikan Mas</a>
+        <div class="dropdown-menu">
+          <a href="../animals/ikan-mas.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/ikan-mas-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Katak</a>
+        <div class="dropdown-menu">
+          <a href="../animals/katak.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/katak-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Kadal</a>
+        <div class="dropdown-menu">
+          <a href="../animals/kadal.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/kadal-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Marmut</a>
+        <div class="dropdown-menu">
+          <a href="../animals/marmut.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/marmut-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Burung Dara</a>
+        <div class="dropdown-menu">
+          <a href="../animals/burung-dara-jantan-1.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K9)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 9</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-jantan-2.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K7)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 7</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-1.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K3)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 3</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-2.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K5)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 5</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#tentang">Tentang</a>
+    </nav>
+    
+    <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="animal-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Beranda</a> <span class="sep">/</span> <a href="../index.html#koleksi">Koleksi Spesimen</a> <span class="sep">/</span> Burung Dara</p>
+    <div class="animal-hero-top">
+      <div>
+        <h1>Burung Dara <span style="font-weight:400;color:var(--text-mute)">(Jantan — K9)</span></h1>
+        <p class="sci-name-lg">Columba livia</p>
+      </div>
+      <div class="specimen-no"><strong>No. 05</strong>dari 05 spesimen</div>
+    </div>
+    
+    <div class="taxon-strip">
+      <div class="taxon-item"><span class="k">Kingdom</span><span class="v">Animalia</span></div>
+      <div class="taxon-item"><span class="k">Filum</span><span class="v">Chordata</span></div>
+      <div class="taxon-item"><span class="k">Kelas</span><span class="v">Aves</span></div>
+      <div class="taxon-item"><span class="k">Ordo</span><span class="v">Columbiformes</span></div>
+      <div class="taxon-item"><span class="k">Famili</span><span class="v">Columbidae</span></div>
+      <div class="taxon-item"><span class="k">Genus</span><span class="v italic">Columba</span></div>
+      <div class="taxon-item"><span class="k">Spesies</span><span class="v italic">Columba livia</span></div>
+    </div>
+
+    <div class="desc-box">
+      <h3>Deskripsi Singkat</h3>
+      <p>Burung dara (merpati) jantan umumnya memiliki postur tubuh yang lebih besar, tegap, dan kekar dibandingkan dengan burung dara betina. Karakteristik fisiknya tampak jelas pada bentuk kepala yang lebih besar dan bulat, paruh yang tebal, serta tonjolan putih di atas hidung (cere) yang cenderung lebih besar dan kasar. Pada bagian leher, bulu dara jantan biasanya memiliki warna metalik (hijau atau ungu) yang lebih mengkilap dan mencolok saat terkena sinar matahari. Dari segi perilaku, burung dara jantan sangat dikenal dengan kebiasaannya yang disebut bekur, yaitu mengeluarkan suara dengkur ("kur-kur") yang berat sambil mengembangkan bulu leher dan menurunkan ekornya hingga menyapu tanah untuk memikat betina. Selain lebih aktif dan agresif, burung dara jantan juga memiliki sifat teritorial yang kuat dalam menjaga sarang atau wilayah kekuasaannya.</p>
+    </div>
+
+    <p class="animal-intro">Pengamatan spesimen burung dara jantan ditujukan untuk mempelajari morfologi kelas aves penunjang kemampuan terbang (volant), lokomosi bipedal bersisik, serta kompleksitas sistem organ internal aerodinamis pasca-seksio seperti sembilan kantung udara (saccus pneumaticus), modifikasi ventrikulus (ampela), dan sepasang testis tanpa organ kopulasi eksternal.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
+  <div class="container">
+
+    <div class="organ-section" id="morfologi-luar">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Morfologi Eksternal (Sebelum Dibedah)</h2>
+      </div>
+      <p class="organ-note">Dokumentasi struktur fisik luar tubuh burung dara jantan utuh penunjang adaptasi aerodinamis terbang dan lokomosi bertengger.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.1</span>
+            <img src="../images/burung-dara/jantan/sebelum dibedah kel 9.jpg" alt="Morfologi luar burung dara jantan sebelum dibedah">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.1 (Sebelum Dibedah)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Sayap</span>
+                  <div class="desc-inline">Alat gerak lokomosi utama untuk terbang yang digerakkan oleh kontraksi otot pektoralis dada.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Thighs</span> <span class="latin">(Paha)</span>
+                  <div class="desc-inline">Kompleks otot kaki bagian atas sebagai tumpuan utama berjalan, melompat, dan meredam kejut saat mendarat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Halus &amp; phalanges</span>
+                  <div class="desc-inline">Struktur integumen kaki dan jari bersisik keras yang berfungsi untuk mencengkeram ranting dan bertengger.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Tail</span> <span class="latin">(Ekor)</span>
+                  <div class="desc-inline">Rangkaian bulu kaudal posterior yang berfungsi sebagai kemudi arah lateral serta rem aerodinamis saat mendarat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Wingtip</span> <span class="latin">(Ujung Sayap)</span>
+                  <div class="desc-inline">Bagian apeks distal sayap untuk memanipulasi gaya angkat udara (lift) dan regulasi kecepatan terbang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Beak</span> <span class="latin">(Paruh)</span>
+                  <div class="desc-inline">Modifikasi struktur zat tanduk keras untuk mematuk biji-biji pakan, merapikan bulu, dan menyuapi anak.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Crown</span> <span class="latin">(Mahkota)</span>
+                  <div class="desc-inline">Kubah batok kepala bagian atas, di mana pada individu jantan memiliki volume yang cenderung lebih besar dan bulat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Mata</span>
+                  <div class="desc-inline">Organ penglihatan berkemampuan akomodasi tajam dan bidang luas, dilengkapi membran niktitans pelindung saat terbang.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 9</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="dalam-bagian1" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-stomach"/></svg></span>
+        <h2>Anatomi Internal I (Situs Viscerum Utama)</h2>
+      </div>
+      <p class="organ-note">Visualisasi topografi organ visceral rongga toraks dan sebagian rongga abdomen setelah disinsisi dan disingkap dari sternum.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.1</span>
+            <img src="../images/burung-dara/jantan/setelah dibedah lebih dalam kel 9.jpg" alt="Anatomi dalam burung dara jantan bagian 1">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.1 (Setelah Dibedah - Bagian 1)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Jantung</span>
+                  <div class="desc-inline">Organ sirkulasi beruang empat sempurna, memompa darah beroksigen tinggi dengan frekuensi cepat untuk menyokong energi terbang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Hati</span>
+                  <div class="desc-inline">Kelenjar metabolik besar penapis toksin, penyimpan glikogen energi, dan pemroduksi empedu pencerna lipid.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Ampela</span> <span class="latin">(Gizzard/Ventrikulus)</span>
+                  <div class="desc-inline">Lambung muskular berotot tebal untuk menggiling makanan dan biji-biji keras, dibantu oleh grit atau kerikil kecil.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Jaringan lemak</span>
+                  <div class="desc-inline">Cadangan adiposa metabolik sebagai deposit bahan bakar terbang jarak jauh dan insulator retensi panas tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Usus besar</span>
+                  <div class="desc-inline">Saluran pencernaan distal berukuran pendek untuk absorpsi air efisien sebelum sisa bolus diteruskan ke kloaka.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 9</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="dalam-bagian2" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-urogenital"/></svg></span>
+        <h2>Anatomi Internal II (Sistem Respirasi &amp; Urogenital)</h2>
+      </div>
+      <p class="organ-note">Detail visualisasi topografi bagian dalam rongga tubuh posterior, berfokus pada aparatus ekskresi, kantung udara, dan kelenjar reproduksi jantan.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 3.1</span>
+            <img src="../images/burung-dara/jantan/setelah dibedah kel 9.jpg" alt="Anatomi dalam burung dara jantan bagian 2">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 3.1 (Setelah Dibedah - Bagian 2)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Usus besar</span>
+                  <div class="desc-inline">Saluran pendek penyerapan air sisa pencernaan, langsung bermuara ke kloaka guna mempercepat defekasi agar bobot tubuh ringan saat terbang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Alat / saluran kelamin jantan</span>
+                  <div class="desc-inline">Terdiri dari sepasang testis kelenjar pemroduksi sperma dan saluran vas deferens yang bermuara langsung di kloaka.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Ginjal</span> <span class="latin">(Metanefros)</span>
+                  <div class="desc-inline">Sepasang organ lobular pengolah ekskresi yang menempel erat pada lekukan tulang punggung (sinksacrum).</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Kantung udara</span> <span class="latin">(Saccus pneumaticus)</span>
+                  <div class="desc-inline">Sistem perluasan membran penampung udara luar yang berfungsi sebagai reservoir pembantu ventilasi respirasi konstan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Paru-paru</span> <span class="latin">(Pulmo)</span>
+                  <div class="desc-inline">Organ respirasi kecil kaku berpembuluh darah, berpasangan dengan kantung udara untuk memaksimalkan pertukaran gas O₂ dan CO₂.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 9</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="info-tambahan" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-info"/></svg></span>
+        <h2>Informasi Tambahan</h2>
+      </div>
+      <p class="organ-note">Daftar lengkap fungsi fisiologis dan uraian sistem organ teridentifikasi dari spesimen burung dara jantan.</p>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+          <span class="info-term">Usus Besar</span>
+          <p class="info-desc">Ukurannya sangat pendek dan langsung bermuara ke kloaka. Berfungsi menyerap air dan membuang sisa makanan dengan cepat agar bobot tubuh tetap ringan saat terbang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Alat/Saluran Kelamin Jantan</span>
+          <p class="info-desc">Terdiri dari sepasang testis (penghasil sperma yang membesar saat musim kawin) dan saluran vas deferens. Burung dara tidak memiliki penis; perkawinan dilakukan dengan menempelkan antar-kloaka (cloacal kiss).</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ginjal</span>
+          <p class="info-desc">Sepasang organ pengolah limbah yang melekat di tulang punggung. Burung dara tidak punya kantung kemih, sehingga urine dikeluarkan dalam bentuk pasta putih (asam urat) bersama kotoran.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Kantung Udara &amp; Paru-Paru</span>
+          <p class="info-desc">Paru-parunya kecil dan kaku, didukung oleh 9 kantung udara yang berfungsi sebagai pompa udara. Sistem ini memastikan paru-paru selalu mendapat oksigen baik saat menghirup maupun mengembuskan napas, sekaligus meringankan tubuh saat terbang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Jantung</span>
+          <p class="info-desc">Memiliki 4 ruang sempurna, memompa darah dengan cepat untuk mendukung suplai oksigen tinggi dan energi terbang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Hati</span>
+          <p class="info-desc">Menyaring racun sisa metabolisme, menyimpan glikogen energi, dan menghasilkan cairan empedu untuk mencerna lipid/lemak makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ampela</span>
+          <p class="info-desc">Lambung berotot tebal (ventrikulus) untuk menggiling biji-bijian keras secara mekanis, sering kali dibantu oleh konsumsi batu-batu kerikil kecil (grit).</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Jaringan Lemak</span>
+          <p class="info-desc">Cadangan jaringan adiposa sebagai bahan bakar metabolisme terbang jauh dan penjaga kehangatan (termoragulasi) suhu tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sayap</span>
+          <p class="info-desc">Alat gerak utama untuk terbang (kemampuan volant) yang digerakkan oleh dorongan otot dada pektoralis mayor dan minor.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Thighs</span> <span class="info-latin">(Paha)</span>
+          <p class="info-desc">Otot kaki bagian atas yang kokoh sebagai tumpuan utama saat berjalan bipedal, melompat, serta penyerap gaya kejut sewaktu mendarat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Halus &amp; Phalanges</span>
+          <p class="info-desc">Struktur anatomi jari kaki bawah bersisik keras, tersusun untuk fungsi mekanis mencengkeram ranting pangkringan dan bertengger.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Tail</span> <span class="info-latin">(Ekor)</span>
+          <p class="info-desc">Bulu belakang yang berfungsi sebagai kemudi pengubah posisi arah lateral serta penunjang pengereman posisi vertikal saat mendarat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Wingtip</span> <span class="info-latin">(Ujung Sayap)</span>
+          <p class="info-desc">Bagian ujung sayap penunjang dinamis terbang untuk mengatur aliran gaya angkat udara dan variasi kelajuan terbang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Beak</span> <span class="info-latin">(Paruh)</span>
+          <p class="info-desc">Zat tanduk rhamphotheca keras untuk mematuk bijian, merapikan susunan bulu (preening), serta menyuapi anak burung.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Crown</span> <span class="info-latin">(Mahkota)</span>
+          <p class="info-desc">Batok kepala bagian dorsal atas, di mana pada merpati jantan bentuknya relatif lebih besar, tegap, dan membulat dibanding betina.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mata</span>
+          <p class="info-desc">Berpenglihatan tajam dan luas dengan lensa akomodatif tinggi, dilengkapi struktur kelopak pelindung konjungtiva saat membelah udara.</p>
+        </div>
+
+      </div></div></div></section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="name">Atlas Vertebrata</span>
+        <p>Atlas digital struktur dan perkembangan hewan, disusun dari dokumentasi praktikum anatomi perbandingan untuk spesies vertebrata jantan dan betina.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Koleksi Spesimen</h4>
+        <ul style="line-height: 1.6;">
+          <li>Ikan Mas (<a href="animals/ikan-mas.html">Jantan</a> / <a href="animals/ikan-mas-betina.html">Betina</a>)</li>
+          <li>Katak (<a href="animals/katak.html">Jantan</a> / <a href="animals/katak-betina.html">Betina</a>)</li>
+          <li>Kadal (<a href="animals/kadal.html">Jantan</a> / <a href="animals/kadal-betina.html">Betina</a>)</li>
+          <li>Marmut (<a href="animals/marmut.html">Jantan</a> / <a href="animals/marmut-betina.html">Betina</a>)</li>
+          <li>Burung Dara ♂ (<a href="animals/burung-dara-jantan-1.html">Kel 9</a> / <a href="animals/burung-dara-jantan-2.html">Kel 7</a>)</li>
+          <li>Burung Dara ♀ (<a href="animals/burung-dara-betina-1.html">Kel 3</a> / <a href="animals/burung-dara-betina-2.html">Kel 5</a>)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atlas</h4>
+        <ul>
+          <li><a href="index.html#tentang">Tentang Atlas Ini</a></li>
+          <li><a href="index.html#koleksi">Koleksi Spesimen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Pendidikan Biologi, FMIPA, Universitas Negeri Jakarta</span>
+      <span>Disusun untuk kebutuhan praktikum anatomi perbandingan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

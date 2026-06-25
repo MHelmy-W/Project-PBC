@@ -1,0 +1,949 @@
+/* ===========================================================
+   ATLAS VERTEBRATA — Atlas Struktur & Perkembangan Hewan
+   Desain: "Spesimen Ledger" — terinspirasi label spesimen
+   museum zoologi & jurnal lapangan, dipadukan dengan UI modern.
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Warna (Palet "Laci Spesimen") ---- */
+  --ink: #1B3A2F;            /* hijau-tinta gelap, header & teks utama */
+  --ink-soft: #2F4D3F;       /* hijau lebih lunak untuk teks sekunder */
+  --moss: #4C7A5E;           /* hijau lumut, garis & ikon */
+  --moss-pale: #D8E2D6;      /* hijau pucat, border halus */
+  --amber: #B5651D;          /* oker/karat, label & aksen spesimen */
+  --amber-bright: #C97A2B;   /* oker terang, hover */
+  --paper: #EDEFE5;          /* latar utama: kertas-sage, bukan krem hangat */
+  --paper-card: #FBFAF5;     /* kartu/permukaan terangkat */
+  --paper-deep: #E2E5D8;     /* latar bagian alternatif */
+  --line: #C9CFC0;           /* garis pembatas halus */
+  --text: #20231F;           /* teks tubuh */
+  --text-mute: #5B5F54;      /* teks sekunder/keterangan */
+  --white: #ffffff;
+
+  /* ---- Tipografi ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* ---- Tata Letak ---- */
+  --maxw: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 1px 2px rgba(27,58,47,0.06), 0 8px 24px -12px rgba(27,58,47,0.18);
+  --shadow-lift: 0 4px 8px rgba(27,58,47,0.08), 0 16px 32px -16px rgba(27,58,47,0.28);
+  --header-h: 72px;
+}
+
+/* ---------- Reset dasar ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; color: var(--ink); }
+p { margin: 0 0 1em; }
+button { font-family: inherit; cursor: pointer; }
+
+/* Latar bertekstur titik halus — kesan kertas laboratorium */
+.dot-texture {
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -8px -8px;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+}
+
+/* Fokus keyboard terlihat jelas (aksesibilitas) */
+a:focus-visible, button:focus-visible, .tab-btn:focus-visible {
+  outline: 2.5px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ===========================================================
+   HEADER / NAVIGASI
+   =========================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: rgba(237, 239, 229, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  width: 34px; height: 34px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand-text .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.brand-text .sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.main-nav { display: flex; align-items: center; gap: 4px; }
+.main-nav a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  position: relative;
+  transition: color 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+.main-nav a:hover { color: var(--ink); background: var(--moss-pale); }
+.main-nav a.active { color: var(--ink); font-weight: 600; }
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px; bottom: 4px;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
+  width: 42px; height: 42px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+
+
+
+
+/* ===========================================================
+   TOMBOL & CHIP
+   =========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--paper-card); }
+.btn-primary:hover { background: var(--ink-soft); box-shadow: var(--shadow-lift); transform: translateY(-1px); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper-card); }
+
+/* ===========================================================
+   HERO — Beranda
+   =========================================================== */
+.hero {
+  padding: 64px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1.5px;
+  background: var(--amber);
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--moss);
+}
+.hero-lede {
+  margin-top: 20px;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 50ch;
+}
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-meta {
+  margin-top: 38px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.hero-meta .stat .num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+}
+.hero-meta .stat .lbl {
+  font-size: 0.76rem;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Panel "laci spesimen" di sisi kanan hero */
+.specimen-panel {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+.specimen-panel::before {
+  content: "KOLEKSI ATLAS";
+  position: absolute;
+  top: -11px; left: 22px;
+  background: var(--ink);
+  color: var(--paper-card);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.specimen-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+.specimen-row:last-child { border-bottom: none; }
+.specimen-row .tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--amber);
+  width: 52px;
+  flex-shrink: 0;
+}
+.specimen-row .info { flex: 1; min-width: 0; }
+.specimen-row .info .common {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.specimen-row .info .sci {
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 0.76rem;
+  color: var(--text-mute);
+}
+.specimen-row .arrow { color: var(--moss); flex-shrink: 0; }
+
+/* ===========================================================
+   GRID KARTU HEWAN (Beranda)
+   =========================================================== */
+.section { padding: 64px 0; }
+.section-deep { background: var(--paper-deep); }
+.section-head {
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.15; }
+.section-head p { margin-top: 12px; color: var(--text-mute); font-size: 1.02rem; }
+
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.animal-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+}
+.animal-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+.animal-card .thumb {
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, var(--moss-pale), var(--paper-deep));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animal-card .thumb svg { width: 64px; height: 64px; color: var(--moss); opacity: 0.55; }
+.animal-card .no-tag {
+  position: absolute;
+  top: 12px; left: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--ink);
+  color: var(--paper-card);
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+.animal-card .body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+.animal-card .common-name { font-size: 1.15rem; font-weight: 600; color: var(--ink); }
+.animal-card .sci-name {
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--amber);
+  margin-top: 2px;
+}
+.animal-card .desc { font-size: 0.88rem; color: var(--text-mute); margin-top: 10px; flex: 1; }
+.animal-card .card-link {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.animal-card .card-link svg { width: 14px; height: 14px; transition: transform 0.18s ease; }
+.animal-card:hover .card-link svg { transform: translateX(3px); }
+
+/* ===========================================================
+   TENTANG / METODE (Beranda)
+   =========================================================== */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+.method-item .num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--amber);
+  margin-bottom: 10px;
+  display: block;
+}
+.method-item h3 { font-size: 1.08rem; font-weight: 600; }
+.method-item p { color: var(--text-mute); font-size: 0.92rem; margin-top: 8px; }
+
+/* ===========================================================
+   HALAMAN HEWAN — Hero spesifik
+   =========================================================== */
+.animal-hero {
+  padding: 44px 0 0;
+}
+.breadcrumb {
+  font-size: 0.82rem;
+  color: var(--text-mute);
+  margin-bottom: 22px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.breadcrumb a:hover { color: var(--ink); text-decoration: underline; }
+.breadcrumb .sep { color: var(--line); }
+
+.animal-hero-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: flex-end;
+  padding-bottom: 28px;
+}
+.animal-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 600;
+}
+.animal-hero .sci-name-lg {
+  font-family: var(--font-mono);
+  font-style: italic;
+  color: var(--amber);
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+.specimen-no {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-mute);
+  text-align: right;
+  white-space: nowrap;
+}
+.specimen-no strong { display: block; color: var(--ink); font-size: 1.6rem; font-family: var(--font-display); font-weight: 600; }
+
+/* Strip taksonomi — elemen tanda tangan situs */
+.taxon-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-card);
+  margin-bottom: 36px;
+}
+.taxon-item {
+  flex: 1 1 auto;
+  min-width: 110px;
+  padding: 14px 18px;
+  border-right: 1px dashed var(--line);
+}
+.taxon-item:last-child { border-right: none; }
+.taxon-item .k {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moss);
+  display: block;
+  margin-bottom: 3px;
+}
+.taxon-item .v {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.taxon-item .v.italic { font-style: italic; font-family: var(--font-mono); font-weight: 500; font-size: 0.86rem; }
+
+.animal-intro {
+  max-width: 72ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  margin-bottom: 12px;
+}
+
+/* ===========================================================
+   TABS Jantan / Betina (khusus Burung Dara)
+   =========================================================== */
+.sex-tabs {
+  display: inline-flex;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+  margin: 8px 0 36px;
+  gap: 4px;
+}
+.tab-btn {
+  border: none;
+  background: transparent;
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.tab-btn.is-active { background: var(--ink); color: var(--paper-card); }
+.tab-panel { display: none; }
+.tab-panel.is-active { display: block; }
+
+/* ===========================================================
+   SISTEM ORGAN — bagian per sistem dalam halaman hewan
+   =========================================================== */
+.organ-section {
+  padding: 46px 0;
+  border-top: 1px solid var(--line);
+}
+.organ-section:first-of-type { border-top: none; }
+.organ-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.organ-head .icon-badge {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--moss-pale);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.organ-head .icon-badge svg { width: 19px; height: 19px; color: var(--ink); }
+.organ-head h2 { font-size: 1.5rem; font-weight: 600; }
+.organ-note {
+  max-width: 78ch;
+  color: var(--text-mute);
+  font-size: 0.96rem;
+  margin: 10px 0 26px;
+}
+
+/* Galeri gambar */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+.specimen-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.photo-slot {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--moss-pale), var(--moss-pale) 10px,
+    var(--paper-deep) 10px, var(--paper-deep) 20px
+  );
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  position: relative;
+  cursor: pointer;
+}
+.photo-slot svg { width: 34px; height: 34px; opacity: 0.6; }
+.photo-slot .hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  background: rgba(251,250,245,0.9);
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-align: center;
+  max-width: 88%;
+}
+.photo-slot .add-icon {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--paper-card);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-card);
+}
+.photo-slot .add-icon svg { width: 13px; height: 13px; opacity: 1; color: var(--amber); }
+
+.label-block { padding: 16px 18px 18px; }
+.label-block .label-no {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.label-block .label-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.label-block .label-desc {
+  font-size: 0.87rem;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+.label-block .label-desc .placeholder-text {
+  color: var(--moss);
+  font-style: italic;
+}
+
+/* ===========================================================
+   LIGHTBOX (modal pratinjau gambar)
+   =========================================================== */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(27,58,47,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 28px;
+}
+.lightbox.is-open { display: flex; }
+.lightbox-inner {
+  background: var(--paper-card);
+  border-radius: var(--radius-md);
+  max-width: 640px;
+  width: 100%;
+  padding: 28px;
+  text-align: center;
+}
+.lightbox-inner svg { width: 48px; height: 48px; color: var(--moss); margin: 0 auto 14px; }
+.lightbox-inner h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.lightbox-inner p { color: var(--text-mute); font-size: 0.92rem; }
+.lightbox-close {
+  margin-top: 18px;
+  background: var(--ink);
+  color: var(--paper-card);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper-deep);
+  padding: 48px 0 28px;
+  margin-top: 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 36px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.footer-brand .name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--paper-card); }
+.footer-brand p { color: rgba(237,239,229,0.7); font-size: 0.88rem; margin-top: 10px; max-width: 38ch; }
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+  margin-bottom: 14px;
+}
+.footer-col ul li { margin-bottom: 9px; }
+.footer-col ul a { font-size: 0.88rem; color: rgba(237,239,229,0.82); }
+.footer-col ul a:hover { color: var(--paper-card); text-decoration: underline; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 22px;
+  font-size: 0.8rem;
+  color: rgba(237,239,229,0.6);
+}
+
+/* ===========================================================
+   ANIMASI — hanya saat muat halaman, TIDAK bergantung scroll.
+   Konten selalu tampil secara default; animasi ini hanya
+   menyempurnakan kemunculan awal hero, dan tidak akan pernah
+   membuat bagian lain halaman "hilang" jika JavaScript gagal,
+   lambat, atau saat halaman dicetak/discreenshot.
+   =========================================================== */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-copy { animation: fadeUpIn 0.7s ease both; }
+.specimen-panel { animation: fadeUpIn 0.7s ease 0.12s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-copy, .specimen-panel { animation: none; }
+  .animal-card, .btn { transition: none; }
+}
+
+/* ===========================================================
+   RESPONSIVE — Tablet
+   =========================================================== */
+@media (max-width: 980px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .specimen-panel { order: -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+  .main-nav {
+    position: fixed;
+    top: var(--header-h); left: 0; right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 16px 18px;
+    gap: 2px;
+    transform: translateY(-130%);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: 0 12px 24px -16px rgba(27,58,47,0.3);
+  }
+  .main-nav.is-open { transform: translateY(0); opacity: 1; }
+  .main-nav a { padding: 13px 10px; font-size: 0.96rem; }
+  .nav-toggle { display: flex; }
+
+  .hero { padding: 38px 0 40px; }
+  .hero-meta { gap: 20px; }
+
+  .animal-hero-top { grid-template-columns: 1fr; align-items: flex-start; }
+  .specimen-no { text-align: left; }
+
+  .taxon-item { min-width: 50%; border-bottom: 1px dashed var(--line); }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+  .footer-bottom { flex-direction: column; }
+
+  .section { padding: 46px 0; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 1.9rem; }
+  .sex-tabs { width: 100%; }
+  .tab-btn { flex: 1; text-align: center; padding: 9px 8px; }
+}
+
+/* ===========================================================
+   FOTO ASLI — tampilan gambar praktikum nyata
+   =========================================================== */
+
+/* Gambar asli yang menggantikan slot placeholder */
+.photo-real {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* Kartu anotasi: foto kiri + daftar keterangan kanan */
+.annotated-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+.annotated-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.annotated-inner.wide-img {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+.annotated-photo {
+  position: relative;
+  background: var(--paper-deep);
+}
+.annotated-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 260px;
+}
+.fig-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: var(--ink);
+  color: var(--paper-card);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.annotated-labels {
+  padding: 22px 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px dashed var(--line);
+}
+.annotated-labels .section-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 14px;
+  display: block;
+}
+.annotation-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.annotation-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.annotation-list .num {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper-card);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.annotation-list .term {
+  color: var(--ink);
+  font-weight: 600;
+}
+.annotation-list .latin {
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  font-style: italic;
+}
+.annotation-list .desc-inline {
+  color: var(--text-mute);
+  font-size: 0.85em;
+  margin-top: 2px;
+}
+
+/* Sumber foto */
+.photo-source {
+  padding: 8px 20px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-mute);
+  border-top: 1px dashed var(--line);
+  letter-spacing: 0.03em;
+}
+
+/* Kotak deskripsi singkat */
+.desc-box {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin-bottom: 40px;
+}
+.desc-box h3 {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 10px;
+}
+.desc-box p {
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Tabel informasi tambahan */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.info-item {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.info-item .info-term {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+.info-item .info-latin {
+  font-family: var(--font-mono);
+  font-style: italic;
+  color: var(--amber);
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+.info-item .info-desc {
+  color: var(--text-mute);
+  font-size: 0.86rem;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* Responsive annotated card */
+@media (max-width: 720px) {
+  .annotated-inner,
+  .annotated-inner.wide-img {
+    grid-template-columns: 1fr;
+  }
+  .annotated-labels {
+    border-left: none;
+    border-top: 1px dashed var(--line);
+    padding: 18px 18px;
+  }
+  .annotated-photo img { min-height: 220px; }
+}

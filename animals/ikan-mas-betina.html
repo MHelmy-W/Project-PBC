@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikan Mas Betina (Cyprinus carpio) — Atlas Vertebrata</title>
+<meta name="description" content="Struktur anatomi Ikan Mas Betina (Cyprinus carpio) per sistem organ, dilengkapi dokumentasi 4 bagian foto dari praktikum anatomi perbandingan Kelompok 7.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Menjaga pembungkus dropdown agar sejajar secara horizontal di dalam .main-nav */
+  .main-nav .dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Membuat kontainer menu dropdown tersembunyi secara default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(244, 246, 238, 0.98);
+    backdrop-filter: blur(10px);
+    min-width: 240px;
+    border: 1px solid var(--line, #dbdfcf);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    margin-top: 2px;
+    z-index: 1000;
+  }
+
+  /* Menampilkan dropdown saat menu utama diarahkan atau diklik */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  /* Mengatur item link di dalam menu dropdown */
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--ink, #2d3732);
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: none !important;
+  }
+
+  /* Efek hover pada baris pilihan jantan/betina */
+  .dropdown-menu a:hover {
+    background: rgba(219, 223, 207, 0.5);
+    color: var(--ink, #1a231f);
+  }
+
+  /* Styling icon/logo jantan dan betina */
+  .gender-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .gender-badge.jantan {
+    background-color: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+  }
+  .gender-badge.betina {
+    background-color: rgba(236, 72, 153, 0.12);
+    color: #db2777;
+  }
+
+  /* Styling teks deskripsi kecil di dalam dropdown */
+  .dropdown-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .dropdown-meta .spec-title {
+    font-weight: 600;
+  }
+  .dropdown-meta .spec-desc {
+    font-size: 0.72rem;
+    color: #727a75;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7H20M4 12H20M4 17H20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-morph" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM5 20a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-stomach" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8V14a4 4 0 0 1 8 0v6c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-urogenital" viewBox="0 0 24 24"><path d="M12 21a7 7 0 0 0 7-7v-3a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-6 0v4H7a2 2 0 0 0-2 2v3a7 7 0 0 0 7 7z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../images/marmut/LOGO UNJ.png" class="brand-mark" alt="Logo UNJ">
+      <span class="brand-text">
+        <span class="name">Atlas Vertebrata</span>
+        <span class="sub">Struktur &amp; Perkembangan Hewan</span>
+      </span>
+    </a>
+    
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html">Beranda</a>
+      
+      <div class="dropdown">
+        <a href="#" class="nav-link">Ikan Mas</a>
+        <div class="dropdown-menu">
+          <a href="../animals/ikan-mas.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/ikan-mas-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Katak</a>
+        <div class="dropdown-menu">
+          <a href="../animals/katak.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/katak-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Kadal</a>
+        <div class="dropdown-menu">
+          <a href="../animals/kadal.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/kadal-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Marmut</a>
+        <div class="dropdown-menu">
+          <a href="../animals/marmut.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/marmut-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Burung Dara</a>
+        <div class="dropdown-menu">
+          <a href="../animals/burung-dara-jantan-1.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K9)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 9</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-jantan-2.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K7)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 7</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-1.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K3)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 3</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-2.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K5)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 5</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../index.html#tentang">Tentang</a>
+    </nav>
+    
+    <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="animal-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Beranda</a> <span class="sep">/</span> <a href="../index.html#koleksi">Koleksi Spesimen</a> <span class="sep">/</span> Ikan Mas</p>
+    <div class="animal-hero-top">
+      <div>
+        <h1>Ikan Mas <span style="font-weight:400;color:var(--text-mute)">(Betina)</span></h1>
+        <p class="sci-name-lg">Cyprinus carpio</p>
+      </div>
+      <div class="specimen-no"><strong>No. 01</strong>dari 05 spesimen</div>
+    </div>
+    
+    <div class="taxon-strip">
+      <div class="taxon-item"><span class="k">Kingdom</span><span class="v">Animalia</span></div>
+      <div class="taxon-item"><span class="k">Filum</span><span class="v">Chordata</span></div>
+      <div class="taxon-item"><span class="k">Kelas</span><span class="v">Actinopterygii</span></div>
+      <div class="taxon-item"><span class="k">Ordo</span><span class="v">Cypriniformes</span></div>
+      <div class="taxon-item"><span class="k">Famili</span><span class="v">Cyprinidae</span></div>
+      <div class="taxon-item"><span class="k">Genus</span><span class="v italic">Cyprinus</span></div>
+      <div class="taxon-item"><span class="k">Spesies</span><span class="v italic">Cyprinus carpio</span></div>
+    </div>
+
+    <div class="desc-box">
+      <h3>Deskripsi Singkat</h3>
+      <p>Ikan mas betina (Cyprinus carpio) merupakan ikan air tawar yang termasuk famili Cyprinidae. Tubuhnya berbentuk memanjang, ditutupi sisik, dan dilengkapi berbagai sirip yang membantu pergerakan di dalam air. Ikan mas bernapas menggunakan insang dan memiliki sistem reproduksi berupa ovarium yang menghasilkan telur. Organ-organ tubuhnya tersusun atas organ luar dan organ dalam yang masing-masing memiliki fungsi penting untuk menunjang kehidupan ikan.</p>
+    </div>
+
+    <p class="animal-intro">Pengamatan spesimen ikan mas betina ditujukan untuk mengidentifikasi pembagian struktur topografi eksternal serta diferensiasi organ visceral internal pasca-seksio. Fokus utama pengamatan meliputi sepasang ovarium penampung sel telur, aparatus insang kiri dan kanan, kantung udara hidrostatik, serta kompleks kelenjar pencernaan.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
+  <div class="container">
+
+    <div class="organ-section" id="sebelum-dibedah">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Morfologi Eksternal (Sebelum Dibedah)</h2>
+      </div>
+      <p class="organ-note">Dokumentasi ciri fisik luar tubuh ikan mas betina utuh sebelum dilakukan insisi rami abdominal.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.1</span>
+            <img src="../images/ikan-mas/betina sebelum dibedah.png" alt="Morfologi luar ikan mas betina sebelum dibedah">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.1</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Mulut</span> <span class="latin">(Oris)</span>
+                  <div class="desc-inline">Berfungsi untuk mengambil makanan dan sebagai jalan masuk air menuju insang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Penutup Insang</span> <span class="latin">(Operculum)</span>
+                  <div class="desc-inline">Berfungsi melindungi insang dan membantu proses respirasi/pernapasan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Sirip Pektoral</span> <span class="latin">(Sirip dada)</span>
+                  <div class="desc-inline">Berfungsi mengatur arah gerakan serta menjaga keseimbangan tubuh saat berenang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Sirip Pelvik</span> <span class="latin">(Sirip perut)</span>
+                  <div class="desc-inline">Membantu menjaga kestabilan dan keseimbangan tubuh di dalam air.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Anus</span>
+                  <div class="desc-inline">Lubang ejeksi pengeluaran sisa hasil eliminasi pencernaan (feses) dari tubuh ikan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Sirip Analis</span>
+                  <div class="desc-inline">Terletak di ventral posterior, berfungsi menjaga keseimbangan tubuh dan membantu saat berenang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Sirip Kaudal</span> <span class="latin">(Sirip ekor)</span>
+                  <div class="desc-inline">Merupakan alat gerak lokomosi utama yang menghasilkan gaya dorong propulsi saat berenang maju.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Sisik</span>
+                  <div class="desc-inline">Lapisan eksoskeleton pelindung tubuh dari cedera mekanis dan gangguan patogen lingkungan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Sirip Dorsal</span> <span class="latin">(Sirip punggung)</span>
+                  <div class="desc-inline">Berfungsi menjaga posisi poros tubuh agar tetap stabil dan tidak mudah terguling.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <span>
+                  <span class="term">Mata</span> <span class="latin">(Organon visus)</span>
+                  <div class="desc-inline">Alat indra penglihatan yang membantu ikan mengenali lingkungan dan mencari pakan.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 7</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="setelah-dibedah" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-stomach"/></svg></span>
+        <h2>Anatomi Internal (Setelah Dibedah)</h2>
+      </div>
+      <p class="organ-note">Tampilan topografi organ dalam rongga tubuh ikan mas betina pasca-pembedahan rami abdominal.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.1</span>
+            <img src="../images/ikan-mas/betina sesudah dibedah.png" alt="Anatomi visceral ikan mas betina setelah dibedah">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.1</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Gelembung Renang</span> <span class="latin">(Vesica natatoria)</span>
+                  <div class="desc-inline">Organ pneumatik hidrostatik berisi gas untuk meregulasi daya apung vertikal ikan di air.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Hati</span> <span class="latin">(Hepar)</span>
+                  <div class="desc-inline">Kelenjar besar berfungsi sekresi cairan empedu, metabolisme zat makanan, dan detoksifikasi racun.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Ovarium</span>
+                  <div class="desc-inline">Organ reproduksi utama betina yang berfungsi menghasilkan, mematangkan, dan menyimpan sel telur (ovum).</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 7</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="insang" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Sistem Respirasi (Insang)</h2>
+      </div>
+      <p class="organ-note">Detail struktur organ pernapasan brankial kiri dan kanan setelah dilepaskan dari rongga kepala.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 3.1</span>
+            <img src="../images/ikan-mas/insang betina.png" alt="Aparatus insang ikan mas betina">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 3.1</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Insang Kiri</span>
+                  <div class="desc-inline">Organ pernapasan lateral kiri penyerap oksigen terlarut dari aliran air dan pelepas karbon dioksida.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Insang Rakan</span>
+                  <div class="desc-inline">Bekerja berpasangan bersama insang kiri sebagai unit organ pertukaran gas respirasi.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 7</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="reproduksi" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-urogenital"/></svg></span>
+        <h2>Sistem Reproduksi Betina</h2>
+      </div>
+      <p class="organ-note">Visualisasi isolasi saluran organ genitalia betina, memperlihatkan lobus ovarium beserta massa telur.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 4.1</span>
+            <img src="../images/ikan-mas/reproduksi betina.png" alt="Sistem reproduksi ovarium ikan mas betina">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 4.1</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Ovarium kiri</span>
+                  <div class="desc-inline">Lobus kiri organ reproduksi betina tempat proliferasi dan perkembangan sel telur.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Ovarium kanan</span>
+                  <div class="desc-inline">Lobus kanan organ reproduksi yang simetris menghasilkan dan menampung massa ovum.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Telur</span>
+                  <div class="desc-inline">Kumpulan ovum hasil poliferasi gametogenesis yang siap dilepaskan saat fase memijah.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Oviduk</span> <span class="latin">(Saluran telur)</span>
+                  <div class="desc-inline">Saluran tubular penyalur massa sel telur dari ovarium menuju lubang pelepasan urogenital.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 7</div>
+      </div>
+    </div>
+
+
+    <div class="organ-section" id="info-tambahan" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-info"/></svg></span>
+        <h2>Informasi Tambahan</h2>
+      </div>
+      <p class="organ-note">Daftar lengkap fungsi fisiologis dan uraian detail komponen organ teridentifikasi dari spesimen ikan mas betina.</p>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+          <span class="info-term">Mulut</span> <span class="info-latin">(Oris)</span>
+          <p class="info-desc">Berfungsi untuk mengambil makanan dan sebagai jalan masuk air menuju insang dalam mekanisme ventilasi pernapasan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mata</span> <span class="info-latin">(Organon visus)</span>
+          <p class="info-desc">Alat penglihatan fotoreseptor yang membantu ikan mengenali struktur tata ruang lingkungan dan melacak pakan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Penutup Insang</span> <span class="info-latin">(Operculum)</span>
+          <p class="info-desc">Berfungsi melindungi filamen insang yang halus dari kerusakan mekanis serta berperan mengatur regulasi pompa air pernapasan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sirip Pektoral</span> <span class="info-latin">(Sirip dada)</span>
+          <p class="info-desc">Berfungsi mengatur perubahan arah gerakan lateral, kemudi naik-turun, serta menjaga stabilitas tubuh saat ikan berenang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sirip Pelvik</span> <span class="info-latin">(Sirip perut)</span>
+          <p class="info-desc">Membantu menjaga kestabilan posisi horizontal tubuh dan keseimbangan posisi ikan di dalam kolom air.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sirip Analis</span>
+          <p class="info-desc">Terletak di dekat lubang anus, berfungsi menjaga orientasi tubuh agar tetap stabil tegak dan menyokong manuver renang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sirip Kaudal</span> <span class="info-latin">(Sirip ekor)</span>
+          <p class="info-desc">Merupakan kemudi gerak utama tubuh (lokomosi) yang menghasilkan gaya dorong hidrodinamik ke depan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sirip Dorsal</span> <span class="info-latin">(Sirip punggung)</span>
+          <p class="info-desc">Berfungsi menjaga posisi tubuh agar tetap stabil lurus tegak di air dan mencegah ikan berguling ke samping saat meluncur.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sisik</span>
+          <p class="info-desc">Lapisan integumen pelindung eksoskeleton yang membentengi tubuh ikan dari luka cedera friksi fisik dan invasi agen infeksi patogen luar.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Anus</span>
+          <p class="info-desc">Lubang pengeluaran pembuangan sisa feses padat metabolisme hasil akhir pencernaan dari traktus digestif ikan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Hati</span> <span class="info-latin">(Hepar)</span>
+          <p class="info-desc">Berfungsi menghasilkan cairan empedu untuk emulsi lemak, membantu metabolisme intermediat, serta menetralkan zat-zat sisa beracun.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Gelembung Renang</span> <span class="info-latin">(Vesica natatoria)</span>
+          <p class="info-desc">Organ internal berdinding elastis berisi campuran gas yang berfungsi mengatur keseimbangan massa jenis hidrostatik ikan di dalam air.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ovarium</span>
+          <p class="info-desc">Organ reproduksi primer betina yang berfungsi menghasilkan sel gamet betina serta mensintesis dan menyimpan ovum (sel telur).</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Insang Kiri</span>
+          <p class="info-desc">Organ respirasi akuatik sisi sinister yang bertugas menyerap molekul oksigen terlarut dari media air dan membuang karbon dioksida dari sirkulasi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Insang Kanan</span>
+          <p class="info-desc">Bekerja secara simultan bersama insang kiri sebagai aparatus utama pertukaran difusi gas respirasi tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ovarium Kiri</span>
+          <p class="info-desc">Bagian sinister kelenjar gonad betina yang matang untuk memproduksi sel telur dalam jumlah besar menjelang pemijahan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ovarium Kanan</span>
+          <p class="info-desc">Bagian dexter organ urogenital reproduktif betina yang simetris mengasimilasi dan menampung sel telur.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Oviduk</span> <span class="info-latin">(Saluran telur)</span>
+          <p class="info-desc">Saluran genital yang berfungsi mengalirkan kumpulan massa sel telur dari kantung ovarium menuju muara pelepasan eksternal saat proses pemijahan.</p>
+        </div>
+
+      </div></div></div></section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="name">Atlas Vertebrata</span>
+        <p>Atlas digital struktur dan perkembangan hewan, disusun dari dokumentasi praktikum anatomi perbandingan untuk spesies vertebrata jantan dan betina.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Koleksi Spesimen</h4>
+        <ul style="line-height: 1.6;">
+          <li>Ikan Mas (<a href="animals/ikan-mas.html">Jantan</a> / <a href="animals/ikan-mas-betina.html">Betina</a>)</li>
+          <li>Katak (<a href="animals/katak.html">Jantan</a> / <a href="animals/katak-betina.html">Betina</a>)</li>
+          <li>Kadal (<a href="animals/kadal.html">Jantan</a> / <a href="animals/kadal-betina.html">Betina</a>)</li>
+          <li>Marmut (<a href="animals/marmut.html">Jantan</a> / <a href="animals/marmut-betina.html">Betina</a>)</li>
+          <li>Burung Dara ♂ (<a href="animals/burung-dara-jantan-1.html">Kel 9</a> / <a href="animals/burung-dara-jantan-2.html">Kel 7</a>)</li>
+          <li>Burung Dara ♀ (<a href="animals/burung-dara-betina-1.html">Kel 3</a> / <a href="animals/burung-dara-betina-2.html">Kel 5</a>)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atlas</h4>
+        <ul>
+          <li><a href="../index.html#tentang">Tentang Atlas Ini</a></li>
+          <li><a href="../index.html#koleksi">Koleksi Spesimen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Pendidikan Biologi, FMIPA, Universitas Negeri Jakarta</span>
+      <span>Disusun untuk kebutuhan praktikum anatomi perbandingan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

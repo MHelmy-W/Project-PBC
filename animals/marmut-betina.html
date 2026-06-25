@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marmut Betina (Cavia porcellus) — Atlas Vertebrata</title>
+<meta name="description" content="Struktur anatomi marmut betina (Cavia porcellus) per sistem organ, dilengkapi dokumentasi foto inspeksi, seksio, dan sistem reproduksi dari praktikum anatomi perbandingan Kelompok 5.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Menjaga pembungkus dropdown agar sejajar secara horizontal di dalam .main-nav */
+  .main-nav .dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Membuat kontainer menu dropdown tersembunyi secara default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(244, 246, 238, 0.98);
+    backdrop-filter: blur(10px);
+    min-width: 240px;
+    border: 1px solid var(--line, #dbdfcf);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    margin-top: 2px;
+    z-index: 1000;
+  }
+
+  /* Menampilkan dropdown saat menu utama diarahkan atau diklik */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  /* Mengatur item link di dalam menu dropdown */
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--ink, #2d3732);
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: none !important;
+  }
+
+  /* Efek hover pada baris pilihan jantan/betina */
+  .dropdown-menu a:hover {
+    background: rgba(219, 223, 207, 0.5);
+    color: var(--ink, #1a231f);
+  }
+
+  /* Styling icon/logo jantan dan betina */
+  .gender-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .gender-badge.jantan {
+    background-color: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+  }
+  .gender-badge.betina {
+    background-color: rgba(236, 72, 153, 0.12);
+    color: #db2777;
+  }
+
+  /* Styling teks deskripsi kecil di dalam dropdown */
+  .dropdown-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .dropdown-meta .spec-title {
+    font-weight: 600;
+  }
+  .dropdown-meta .spec-desc {
+    font-size: 0.72rem;
+    color: #727a75;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Sprite ikon ===== -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7H20M4 12H20M4 17H20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-morph" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM5 20a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-stomach" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8V14a4 4 0 0 1 8 0v6c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../images/marmut/LOGO UNJ.png" class="brand-mark" alt="Logo UNJ">
+      <span class="brand-text">
+        <span class="name">Atlas Vertebrata</span>
+        <span class="sub">Struktur &amp; Perkembangan Hewan</span>
+      </span>
+    </a>
+    
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html">Beranda</a>
+      
+      <div class="dropdown">
+        <a href="#" class="nav-link">Ikan Mas</a>
+        <div class="dropdown-menu">
+          <a href="../animals/ikan-mas.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/ikan-mas-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Katak</a>
+        <div class="dropdown-menu">
+          <a href="../animals/katak.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/katak-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Kadal</a>
+        <div class="dropdown-menu">
+          <a href="../animals/kadal.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/kadal-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Marmut</a>
+        <div class="dropdown-menu">
+          <a href="../animals/marmut.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/marmut-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Burung Dara</a>
+        <div class="dropdown-menu">
+          <a href="../animals/burung-dara-jantan-1.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K9)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 9</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-jantan-2.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K7)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 7</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-1.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K3)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 3</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-2.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K5)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 5</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../index.html#tentang">Tentang</a>
+    </nav>
+    
+    <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero spesimen ===== -->
+<section class="animal-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Beranda</a> <span class="sep">/</span> <a href="../index.html#koleksi">Koleksi Spesimen</a> <span class="sep">/</span> Marmut</p>
+    <div class="animal-hero-top">
+      <div>
+        <h1>Marmut <span style="font-weight:400;color:var(--text-mute)">(Betina)</span></h1>
+        <p class="sci-name-lg">Cavia porcellus</p>
+      </div>
+      <div class="specimen-no"><strong>No. 04</strong>dari 05 spesimen</div>
+    </div>
+    
+    <!-- Strip taksonomi -->
+    <div class="taxon-strip">
+      <div class="taxon-item"><span class="k">Kingdom</span><span class="v">Animalia</span></div>
+      <div class="taxon-item"><span class="k">Filum</span><span class="v">Chordata</span></div>
+      <div class="taxon-item"><span class="k">Kelas</span><span class="v">Mammalia</span></div>
+      <div class="taxon-item"><span class="k">Ordo</span><span class="v">Rodentia</span></div>
+      <div class="taxon-item"><span class="k">Famili</span><span class="v">Caviidae</span></div>
+      <div class="taxon-item"><span class="k">Genus</span><span class="v italic">Cavia</span></div>
+      <div class="taxon-item"><span class="k">Spesies</span><span class="v italic">Cavia porcellus</span></div>
+    </div>
+
+    <!-- Deskripsi singkat -->
+    <div class="desc-box">
+      <h3>Deskripsi Singkat</h3>
+      <p>Marmut betina (Cavia porcellus) adalah mamalia pengerat dari famili Caviidae yang memiliki tubuh relatif lebih besar dan panggul lebih lebar dibandingkan marmut jantan. Marmut betina memiliki peran penting dalam reproduksi, dengan masa kehamilan sekitar 59–72 hari dan dapat melahirkan 1–6 anak dalam satu kali kelahiran. Mereka cenderung bersifat tenang, hidup berkelompok. Dengan perawatan yang baik, marmut betina dapat hidup sekitar 4–8 tahun dalam penangkaran.</p>
+    </div>
+
+    <p class="animal-intro">Marmut mewakili kelas Mammalia, kelompok vertebrata homoioterm yang dicirikan oleh keberadaan rambut dan kelenjar susu. Pengamatan spesimen betina ditujukan untuk memahami kompleksitas organ dalam sistem pencernaan pengerat (seperti sekum yang berkembang pesat) serta kekhasan struktur saluran reproduksi betina tipe bikornuat.</p>
+  </div>
+</section>
+
+<!-- ===== Isi halaman ===== -->
+<section class="section" style="padding-top:8px">
+  <div class="container">
+
+    <!-- ============================================================
+         BAGIAN 1: MORFOLOGI EKSTERNAL (INSPEKSI)
+         ============================================================ -->
+    <div class="organ-section" id="morfologi">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Morfologi Eksternal (Inspeksi)</h2>
+      </div>
+      <p class="organ-note">Pengamatan morfologi anatomi luar tubuh spesimen marmut betina secara menyeluruh dari arah ventral, dorsal, hingga detail struktur kepala.</p>
+
+      <!-- Gambar 1.1 — Inspeksi Tampak Ventral -->
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.1</span>
+            <img src="../images/marmut/Tabel 1.jpg" alt="Morfologi luar marmut betina tampak ventral">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.1 (Tampak Ventral)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Mulut</span> <span class="latin">(Oris)</span>
+                  <div class="desc-inline">Merupakan pintu masuk sistem pencernaan. Berfungsi untuk mengambil, mengunyah, dan menelan makanan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Leher</span> <span class="latin">(Cervix)</span>
+                  <div class="desc-inline">Menghubungkan kepala dengan badan. Berfungsi menopang kepala dan memungkinkan pergerakan kepala ke berbagai arah.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Dada</span> <span class="latin">(Thorax)</span>
+                  <div class="desc-inline">Bagian tubuh yang berisi organ vital seperti jantung dan paru-paru. Berfungsi melindungi organ-organ tersebut serta membantu proses pernapasan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Abdomen</span> <span class="latin">(Abdomen)</span>
+                  <div class="desc-inline">Bagian tubuh yang berisi sebagian besar organ pencernaan, reproduksi, dan ekskresi. Berfungsi sebagai tempat berbagai proses metabolisme tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Tungkai depan</span> <span class="latin">(Extremitas anterior)</span>
+                  <div class="desc-inline">Berfungsi menopang tubuh bagian depan, membantu berjalan, serta memegang atau mengatur makanan saat makan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Tungkai belakang</span> <span class="latin">(Extremitas posterior)</span>
+                  <div class="desc-inline">Berfungsi menopang tubuh bagian belakang dan menghasilkan tenaga untuk bergerak, berlari, atau melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Jari kaki</span> <span class="latin">(Digiti)</span>
+                  <div class="desc-inline">Membantu keseimbangan dan pergerakan saat berjalan atau berlari.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Kuku</span> <span class="latin">(Ungues)</span>
+                  <div class="desc-inline">Melindungi ujung jari serta membantu mencengkeram permukaan dan menggali.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Rambut</span> <span class="latin">(Pili)</span>
+                  <div class="desc-inline">Menutupi tubuh untuk menjaga suhu tubuh, melindungi kulit, dan membantu menerima rangsangan dari lingkungan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <span>
+                  <span class="term">Vulva</span> <span class="latin">(Vulva)</span>
+                  <div class="desc-inline">Organ kelamin luar betina yang merupakan jalan keluar saluran reproduksi dan urin. Berperan dalam proses reproduksi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">11</span>
+                <span>
+                  <span class="term">Anus</span> <span class="latin">(Anus)</span>
+                  <div class="desc-inline">Lubang akhir saluran pencernaan yang berfungsi mengeluarkan feses dari tubuh.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+
+      <!-- Gambar 1.2 — Inspeksi Tampak Dorsal -->
+      <div class="annotated-card" style="margin-top:24px">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.2</span>
+            <img src="../images/marmut/Tabel 2.jpg" alt="Morfologi luar marmut betina tampak dorsal">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.2 (Tampak Dorsal)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Kepala</span> <span class="latin">(Caput)</span>
+                  <div class="desc-inline">Bagian tubuh yang berisi otak, mulut, hidung, mata, dan telinga. Fungsinya sebagai pusat koordinasi saraf, tempat alat indera, serta membantu proses makan dan pernapasan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Telinga</span> <span class="latin">(Auricula)</span>
+                  <div class="desc-inline">Telinga berbentuk daun telinga yang cukup lebar dan tipis. Berfungsi menangkap gelombang suara dan membantu menjaga keseimbangan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Mata</span> <span class="latin">(Oculus)</span>
+                  <div class="desc-inline">Mata terletak di sisi kanan dan kiri kepala. Fungsinya sebagai alat penglihatan untuk mendeteksi cahaya, bentuk, warna, dan gerakan di lingkungan sekitar.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Leher</span> <span class="latin">(Cervix)</span>
+                  <div class="desc-inline">Leher menghubungkan kepala dengan badan. Fungsinya menopang kepala serta memungkinkan pergerakan kepala ke berbagai arah.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Punggung</span> <span class="latin">(Dorsum)</span>
+                  <div class="desc-inline">Punggung merupakan bagian atas tubuh yang membentang dari leher hingga panggul. Fungsinya melindungi tulang belakang dan menjadi tempat melekatnya otot-otot tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Tungkai depan</span> <span class="latin">(Extremitas anterior)</span>
+                  <div class="desc-inline">Tungkai depan terdiri atas bahu, lengan, dan kaki depan. Fungsinya menopang tubuh bagian depan, membantu berjalan, serta digunakan untuk memegang atau mengatur makanan saat makan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Tungkai belakang</span> <span class="latin">(Extremitas posterior)</span>
+                  <div class="desc-inline">Tungkai belakang lebih kuat dibandingkan tungkai depan. Fungsinya menopang tubuh bagian belakang, menghasilkan dorongan saat bergerak, berlari, atau melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Jari kaki</span> <span class="latin">(Digiti)</span>
+                  <div class="desc-inline">Jari kaki merupakan ujung tungkai yang membantu pergerakan dan keseimbangan. Pada marmut, kaki depan umumnya memiliki empat jari, sedangkan kaki belakang memiliki tiga jari.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Kuku</span> <span class="latin">(Ungues)</span>
+                  <div class="desc-inline">Kuku menutupi ujung jari dan tersusun atas keratin. Fungsinya melindungi jari, membantu mencengkeram permukaan, serta digunakan untuk menggali atau membersihkan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <span>
+                  <span class="term">Rambut</span> <span class="latin">(Pili)</span>
+                  <div class="desc-inline">Rambut menutily hampir seluruh permukaan tubuh marmut. Fungsinya menjaga suhu tubuh, melindungi kulit dari cedera ringan dan sinar matahari, serta membantu fungsi sensorik melalui getaran yang diterima rambut.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+
+      <!-- Gambar 1.3 — Inspeksi Tampak Kepala -->
+      <div class="annotated-card" style="margin-top:24px">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.3</span>
+            <img src="../images/marmut/Tabel 3.jpg" alt="Detail bagian kepala marmut betina">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.3 (Tampak Kepala)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Moncong</span> <span class="latin">(Rostrum)</span>
+                  <div class="desc-inline">Bagian depan kepala yang menonjol. Berfungsi membantu penciuman dan pencarian makanan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Hidung</span> <span class="latin">(Nasus)</span>
+                  <div class="desc-inline">Organ penciuman yang berfungsi mendeteksi bau dan membantu proses pernapasan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Lubang hidung</span> <span class="latin">(Nares externae)</span>
+                  <div class="desc-inline">Merupakan pintu masuk udara ke saluran pernapasan serta tempat masuknya molekul bau untuk dideteksi oleh reseptor penciuman.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Bibir</span> <span class="latin">(Labium)</span>
+                  <div class="desc-inline">Membantu mengambil makanan, menahan makanan saat dikunyah, dan melindungi rongga mulut.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Gigi seri</span> <span class="latin">(Dentes incisivi)</span>
+                  <div class="desc-inline">Gigi depan yang tajam dan terus tumbuh sepanjang hidup. Berfungsi untuk memotong dan mengerat makanan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Diastema</span> <span class="latin">(Diastema)</span>
+                  <div class="desc-inline">Celah antara gigi seri dan gigi geraham. Berfungsi memberikan ruang bagi lidah dan membantu proses manipulasi makanan saat mengunyah.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Lidah</span> <span class="latin">(Lingua)</span>
+                  <div class="desc-inline">Organ berotot yang membantu mengecap rasa, mengatur posisi makanan saat dikunyah, dan membantu proses menelan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Kumis</span> <span class="latin">(Vibrissae)</span>
+                  <div class="desc-inline">Rambut sensorik yang sangat peka terhadap sentuhan. Berfungsi membantu orientasi, mendeteksi benda di sekitar, dan mengenali lingkungan.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+    </div><!-- /morfologi -->
+
+
+    <!-- ============================================================
+         BAGIAN 2: ANATOMI INTERNAL (SECTION) & SISTEM REPRODUKSI
+         ============================================================ -->
+    <div class="organ-section" id="organ-dalam" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-stomach"/></svg></span>
+        <h2>Anatomi Internal &amp; Sistem Reproduksi (Sectsio)</h2>
+      </div>
+      <p class="organ-note">Pembedahan rongga perut dan dada marmut betina untuk meneliti topografi organ dalam (situs viscerum), kelenjar, limpa, serta saluran genital reproduksi secara mendalam.</p>
+
+      <!-- Gambar 2.1 — Section Tampak Ventral -->
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.1</span>
+            <img src="../images/marmut/Tabel 4.jpg" alt="Situs viscerum anatomi internal marmut betina tampak ventral">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.1 (Sectsio Ventral)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Jantung</span> <span class="latin">(Cor)</span>
+                  <div class="desc-inline">Jantung marmut merupakan organ berotot yang berfungsi memompa darah ke seluruh tubuh untuk memenuhi kebutuhan oksigen.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Paru-paru</span> <span class="latin">(Pulmones)</span>
+                  <div class="desc-inline">Paru-paru marmut merupakan organ respirasi yang berfungsi melakukan pertukaran gas oksigen dan karbon dioksida untuk memenuhi kebutuhan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Hati</span> <span class="latin">(Hepar)</span>
+                  <div class="desc-inline">Hati marmut merupakan kelenjar terbesar dalam tubuh yang berfungsi menghasilkan empedu dan membantu proses metabolisme zat makanan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Pankreas</span> <span class="latin">(Pancreas)</span>
+                  <div class="desc-inline">Mengeluarkan getah pankreas yang mengandung enzim pencernaan untuk disalurkan ke duodenum serta menyekresi hormon insulin.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Lambung</span> <span class="latin">(Gaster atau Ventriculus)</span>
+                  <div class="desc-inline">Lambung marmut berbentuk kantung sederhana yang berfungsi menyimpan dan mencerna makanan sebelum diteruskan ke usus halus.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Usus kecil</span> <span class="latin">(Intestinus tenue)</span>
+                  <div class="desc-inline">Usus halus marmut merupakan bagian saluran pencernaan yang berfungsi mencerna dan menyerap nutrisi dari makanan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Sekum</span> <span class="latin">(Caecum)</span>
+                  <div class="desc-inline">Sekum marmut merupakan bagian usus besar yang berkembang dengan baik dan berfungsi sebagai tempat fermentasi bahan berserat dalam proses pencernaan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Kolon</span> <span class="latin">(Colon)</span>
+                  <div class="desc-inline">Kolon marmut merupakan bagian usus besar yang berfungsi menyerap air dan membentuk feses sebelum dikeluarkan dari tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Rektum</span> <span class="latin">(Rectum)</span>
+                  <div class="desc-inline">Rektum marmut merupakan bagian akhir usus besar yang berfungsi menyimpan sementara dan mengeluarkan feses melalui anus.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+
+      <!-- Gambar 2.2 — Sistem Reproduksi -->
+      <div class="annotated-card" style="margin-top:24px">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.2</span>
+            <img src="../images/marmut/Tabel 5.jpg" alt="Sistem urogenital reproduksi marmut betina">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.2 (Sistem Reproduksi)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Kelenjar adrenal</span> <span class="latin">(Glandula suprarenalis)</span>
+                  <div class="desc-inline">Kelenjar adrenal marmut merupakan organ endokrin yang terletak di dekat ginjal dan berfungsi menghasilkan hormon untuk mengatur metabolisme serta respons tubuh terhadap stres.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Ureter</span> <span class="latin">(Ureter)</span>
+                  <div class="desc-inline">Ureter marmut merupakan saluran yang menghubungkan ginjal dengan kandung kemih dan berfungsi mengalirkan urin menuju kandung kemih.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Ovarium</span> <span class="latin">(Ovarium)</span>
+                  <div class="desc-inline">Ovarium marmut merupakan organ reproduksi berpasangan yang berfungsi menghasilkan oosit dan hormon reproduksi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Oviduk</span> <span class="latin">(Oviductus)</span>
+                  <div class="desc-inline">Oviduk marmut merupakan saluran berpasangan yang menghubungkan ovarium dengan uterus dan berfungsi menyalurkan ovum menuju uterus.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Uterus</span> <span class="latin">(Uterus)</span>
+                  <div class="desc-inline">Uterus marmut merupakan organ reproduksi bertanduk dua (bicornuate) yang berfungsi sebagai tempat perkembangan embrio dan janin.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Serviks</span> <span class="latin">(Cervix uteri)</span>
+                  <div class="desc-inline">Serviks marmut merupakan bagian kaudal uterus yang menghubungkan uterus dengan vagina dan berfungsi sebagai saluran reproduksi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Uretra</span> <span class="latin">(Urethra)</span>
+                  <div class="desc-inline">Uretra marmut merupakan saluran akhir sistem urinaria yang berfungsi mengeluarkan urin dari kandung kemih ke luar tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Ginjal</span> <span class="latin">(Renes)</span>
+                  <div class="desc-inline">Ginjal marmut berbentuk seperti kacang dan berfungsi menyaring darah serta menghasilkan urin untuk menjaga keseimbangan cairan tubuh.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+
+      <!-- Gambar 2.3 — Saluran Limpa -->
+      <div class="annotated-card" style="margin-top:24px">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.3</span>
+            <img src="../images/marmut/Tabel 6.jpg" alt="Detail saluran limpa dan organ sekitarnya pada marmut betina">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.3 (Saluran Limpa)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Lambung</span> <span class="latin">(Gaster)</span>
+                  <div class="desc-inline">Organ pencernaan berbentuk kantung yang berbatasan langsung dengan limpa pada sisi kelengkungan besarnya.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">Limpa</span> <span class="latin">(Lien)</span>
+                  <div class="desc-inline">Limpa marmut merupakan organ limfoid yang berfungsi menyaring darah dan berperan dalam sistem kekebalan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Ginjal</span> <span class="latin">(Ren)</span>
+                  <div class="desc-inline">Organ ekskresi utama yang terletak di daerah retroperitoneal, dekat dengan posisi limpa di sisi kiri tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Tulang rusuk</span> <span class="latin">(Costae)</span>
+                  <div class="desc-inline">Tulang rusuk (costae) marmut merupakan tulang penyusun rongga dada yang berfungsi melindungi organ-organ vital, seperti jantung dan paru-paru, serta membantu proses pernapasan.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 6</div>
+      </div>
+    </div><!-- /organ-dalam -->
+
+
+    <!-- ============================================================
+         BAGIAN 3: INFORMASI TAMBAHAN
+         ============================================================ -->
+    <div class="organ-section" id="info-tambahan" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-info"/></svg></span>
+        <h2>Informasi Tambahan</h2>
+      </div>
+      <p class="organ-note">Daftar komprehensif fungsi fisiologis dari seluruh komponen organ luar dan dalam yang teramati pada marmut betina.</p>
+
+      <div class="info-grid">
+
+        <!-- Organ Luar -->
+        <div class="info-item">
+          <span class="info-term">Kepala</span> <span class="info-latin">(Caput)</span>
+          <p class="info-desc">Bagian tubuh yang berisi otak, mulut, hidung, mata, dan telinga. Fungsinya sebagai pusat koordinasi saraf, tempat alat indera, serta membantu proses makan dan pernapasan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Telinga</span> <span class="info-latin">(Auricula)</span>
+          <p class="info-desc">Telinga berbentuk daun telinga yang cukup lebar dan tipis. Berfungsi menangkap gelombang suara dan membantu menjaga keseimbangan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mata</span> <span class="info-latin">(Oculus)</span>
+          <p class="info-desc">Mata terletak di sisi kanan dan kiri kepala. Fungsinya sebagai alat penglihatan untuk mendeteksi cahaya, bentuk, warna, dan gerakan di lingkungan sekitar.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Leher</span> <span class="info-latin">(Cervix)</span>
+          <p class="info-desc">Leher menghubungkan kepala dengan badan. Fungsinya menopang kepala serta memungkinkan pergerakan kepala ke berbagai arah.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Punggung</span> <span class="info-latin">(Dorsum)</span>
+          <p class="info-desc">Punggung merupakan bagian atas tubuh yang membentang dari leher hingga panggul. Fungsinya melindungi tulang belakang dan menjadi tempat melekatnya otot-otot tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Tungkai depan</span> <span class="info-latin">(Extremitas anterior)</span>
+          <p class="info-desc">Tungkai depan terdiri atas bahu, lengan, dan kaki depan. Fungsinya menopang tubuh bagian depan, membantu berjalan, serta digunakan untuk memegang atau mengatur makanan saat makan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Tungkai belakang</span> <span class="info-latin">(Extremitas posterior)</span>
+          <p class="info-desc">Tungkai belakang lebih kuat dibandingkan tungkai depan. Fungsinya menopang tubuh bagian belakang, menghasilkan dorongan saat bergerak, berlari, atau melompat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Jari kaki</span> <span class="info-latin">(Digiti)</span>
+          <p class="info-desc">Jari kaki merupakan ujung tungkai yang membantu pergerakan dan keseimbangan. Pada marmut, kaki depan umumnya memiliki empat jari, sedangkan kaki belakang memiliki tiga jari.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Kuku</span> <span class="info-latin">(Ungues)</span>
+          <p class="info-desc">Kuku menutupi ujung jari dan tersusun atas keratin. Fungsinya melindungi jari, membantu mencengkeram permukaan, serta digunakan untuk menggali atau membersihkan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Rambut</span> <span class="info-latin">(Pili)</span>
+          <p class="info-desc">Rambut menutupi hampir seluruh permukaan tubuh marmut. Fungsinya menjaga suhu tubuh, melindungi kulit dari cedera ringan dan sinar matahari, serta membantu fungsi sensorik melalui getaran yang diterima rambut.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mulut</span> <span class="info-latin">(Oris)</span>
+          <p class="info-desc">Merupakan pintu masuk sistem pencernaan. Berfungsi untuk mengambil, mengunyah, dan menelan makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Dada</span> <span class="info-latin">(Thorax)</span>
+          <p class="info-desc">Bagian tubuh yang berisi organ vital seperti jantung dan paru-paru. Berfungsi melindungi organ-organ tersebut serta membantu proses pernapasan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Abdomen</span> <span class="info-latin">(Abdomen)</span>
+          <p class="info-desc">Bagian tubuh yang berisi sebagian besar organ pencernaan, reproduksi, dan ekskresi. Berfungsi sebagai tempat berbagai proses metabolisme tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Vulva</span> <span class="info-latin">(Vulva)</span>
+          <p class="info-desc">Organ kelamin luar betina yang merupakan jalan keluar saluran reproduksi dan urin. Berperan dalam proses reproduksi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Anus</span> <span class="info-latin">(Anus)</span>
+          <p class="info-desc">Lubang akhir saluran pencernaan yang berfungsi mengeluarkan feses dari tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Moncong</span> <span class="info-latin">(Rostrum)</span>
+          <p class="info-desc">Bagian depan kepala yang menonjol. Berfungsi membantu penciuman dan pencarian makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Hidung</span> <span class="info-latin">(Nasus)</span>
+          <p class="info-desc">Organ penciuman yang berfungsi mendeteksi bau dan membantu proses pernapasan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Lubang hidung</span> <span class="info-latin">(Nares externae)</span>
+          <p class="info-desc">Merupakan pintu masuk udara ke saluran pernapasan serta tempat masuknya molekul bau untuk dideteksi oleh reseptor penciuman.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Bibir</span> <span class="info-latin">(Labium)</span>
+          <p class="info-desc">Membantu mengambil makanan, menahan makanan saat dikunyah, dan melindungi rongga mulut.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Gigi seri</span> <span class="info-latin">(Dentes incisivi)</span>
+          <p class="info-desc">Gigi depan yang tajam dan terus tumbuh sepanjang hidup. Berfungsi untuk memotong dan mengerat makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Diastema</span> <span class="info-latin">(Diastema)</span>
+          <p class="info-desc">Celah antara gigi seri dan gigi geraham. Berfungsi memberikan ruang bagi lidah dan membantu proses manipulasi makanan saat mengunyah.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Lidah</span> <span class="info-latin">(Lingua)</span>
+          <p class="info-desc">Organ berotot yang membantu mengecap rasa, mengatur posisi makanan saat dikunyah, dan membantu proses menelan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Kumis</span> <span class="info-latin">(Vibrissae)</span>
+          <p class="info-desc">Rambut sensorik yang sangat peka terhadap sentuhan. Berfungsi membantu orientasi, mendeteksi benda di sekitar, dan mengenali lingkungan.</p>
+        </div>
+
+        <!-- Organ Dalam -->
+        <div class="info-item">
+          <span class="info-term">Lambung</span> <span class="info-latin">(Gaster / Ventriculus)</span>
+          <p class="info-desc">Lambung marmut berbentuk kantung sederhana yang berfungsi menyimpan dan mencerna makanan sebelum diteruskan ke usus halus.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Jantung</span> <span class="info-latin">(Cor)</span>
+          <p class="info-desc">Jantung marmut merupakan organ berotot yang berfungsi memompa darah ke seluruh tubuh untuk memenuhi kebutuhan oksigen.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ginjal</span> <span class="info-latin">(Ren)</span>
+          <p class="info-desc">Ginjal marmut berbentuk seperti kacang dan berfungsi menyaring darah serta menghasilkan urin untuk menjaga keseimbangan cairan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Hati</span> <span class="info-latin">(Hepar)</span>
+          <p class="info-desc">Hati marmut merupakan kelenjar terbesar dalam tubuh yang berfungsi menghasilkan empedu dan membantu proses metabolisme zat makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Limpa</span> <span class="info-latin">(Lien)</span>
+          <p class="info-desc">Limpa marmut merupakan organ limfoid yang berfungsi menyaring darah dan berperan dalam sistem kekebalan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Paru - Paru</span> <span class="info-latin">(Pulmones)</span>
+          <p class="info-desc">Paru-paru marmut merupakan organ respirasi yang berfungsi melakukan pertukaran gas oksigen dan karbon dioksida untuk memenuhi kebutuhan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Usus Kecil</span> <span class="info-latin">(Intestinus Tenue)</span>
+          <p class="info-desc">Usus halus marmut merupakan bagian saluran pencernaan yang berfungsi mencerna dan menyerap nutrisi dari makanan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sekum</span> <span class="info-latin">(Caecum)</span>
+          <p class="info-desc">Sekum marmut merupakan bagian usus besar yang berkembang dengan baik dan berfungsi sebagai tempat fermentasi bahan berserat dalam proses pencernaan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Kolon</span> <span class="info-latin">(Colon)</span>
+          <p class="info-desc">Kolon marmut merupakan bagian usus besar yang berfungsi menyerap air dan membentuk feses sebelum dikeluarkan dari tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Rektum</span> <span class="info-latin">(Rectum)</span>
+          <p class="info-desc">Rektum marmut merupakan bagian akhir usus besar yang berfungsi menyimpan sementara dan mengeluarkan feses melalui anus.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Kelenjar adrenal</span> <span class="info-latin">(Glandula suprarenalis)</span>
+          <p class="info-desc">Kelenjar adrenal (glandula suprarenalis) marmut merupakan organ endokrin yang terletak di dekat ginjal dan berfungsi menghasilkan hormon untuk mengatur metabolisme serta respons tubuh terhadap stres.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ureter</span> <span class="info-latin">(Ureter)</span>
+          <p class="info-desc">Ureter marmut merupakan saluran yang menghubungkan ginjal dengan kandung kemih dan berfungsi mengalirkan urin menuju kandung kemih.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ovarium</span> <span class="info-latin">(Ovarium)</span>
+          <p class="info-desc">Ovarium marmut merupakan organ reproduksi berpasangan yang berfungsi menghasilkan oosit dan hormon reproduksi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Oviduk</span> <span class="info-latin">(Oviductus)</span>
+          <p class="info-desc">Oviduk marmut merupakan saluran berpasangan yang menghubungkan ovarium dengan uterus dan berfungsi menyalurkan ovum menuju uterus.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Uterus</span> <span class="info-latin">(Uterus)</span>
+          <p class="info-desc">Uterus marmut merupakan organ reproduksi bertanduk dua (bicornuate) yang berfungsi sebagai tempat perkembangan embrio dan janin.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Serviks</span> <span class="info-latin">(Cervix uteri)</span>
+          <p class="info-desc">Serviks marmut merupakan bagian kaudal uterus yang menghubungkan uterus dengan vagina dan berfungsi sebagai saluran reproduksi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Uretra</span> <span class="info-latin">(Urethra)</span>
+          <p class="info-desc">Uretra marmut merupakan saluran akhir sistem urinaria yang berfungsi mengeluarkan urin dari kandung kemih ke luar tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Tulang rusuk</span> <span class="info-latin">(Costae)</span>
+          <p class="info-desc">Tulang rusuk (costae) marmut merupakan tulang penyusun rongga dada yang berfungsi melindungi organ-organ vital, seperti jantung dan paru-paru, serta membantu proses pernapasan.</p>
+        </div>
+
+      </div><!-- /info-grid -->
+    </div><!-- /info-tambahan -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="name">Atlas Vertebrata</span>
+        <p>Atlas digital struktur dan perkembangan hewan, disusun dari dokumentasi praktikum anatomi perbandingan untuk spesies vertebrata jantan dan betina.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Koleksi Spesimen</h4>
+        <ul style="line-height: 1.6;">
+          <li>Ikan Mas (<a href="animals/ikan-mas.html">Jantan</a> / <a href="animals/ikan-mas-betina.html">Betina</a>)</li>
+          <li>Katak (<a href="animals/katak.html">Jantan</a> / <a href="animals/katak-betina.html">Betina</a>)</li>
+          <li>Kadal (<a href="animals/kadal.html">Jantan</a> / <a href="animals/kadal-betina.html">Betina</a>)</li>
+          <li>Marmut (<a href="animals/marmut.html">Jantan</a> / <a href="animals/marmut-betina.html">Betina</a>)</li>
+          <li>Burung Dara ♂ (<a href="animals/burung-dara-jantan-1.html">Kel 9</a> / <a href="animals/burung-dara-jantan-2.html">Kel 7</a>)</li>
+          <li>Burung Dara ♀ (<a href="animals/burung-dara-betina-1.html">Kel 3</a> / <a href="animals/burung-dara-betina-2.html">Kel 5</a>)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atlas</h4>
+        <ul>
+          <li><a href="../index.html#tentang">Tentang Atlas Ini</a></li>
+          <li><a href="../index.html#koleksi">Koleksi Spesimen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Pendidikan Biologi, FMIPA, Universitas Negeri Jakarta</span>
+      <span>Disusun untuk kebutuhan praktikum anatomi perbandingan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
