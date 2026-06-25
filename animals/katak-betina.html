@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katak Betina — Atlas Vertebrata</title>
+<meta name="description" content="Struktur anatomi Katak Betina per sistem organ, dilengkapi dokumentasi 4 bagian foto dari praktikum anatomi perbandingan.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Menjaga pembungkus dropdown agar sejajar secara horizontal di dalam .main-nav */
+  .main-nav .dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Membuat kontainer menu dropdown tersembunyi secara default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(244, 246, 238, 0.98);
+    backdrop-filter: blur(10px);
+    min-width: 240px;
+    border: 1px solid var(--line, #dbdfcf);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    margin-top: 2px;
+    z-index: 1000;
+  }
+
+  /* Menampilkan dropdown saat menu utama diarahkan atau diklik */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  /* Mengatur item link di dalam menu dropdown */
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--ink, #2d3732);
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: none !important;
+  }
+
+  /* Efek hover pada baris pilihan jantan/betina */
+  .dropdown-menu a:hover {
+    background: rgba(219, 223, 207, 0.5);
+    color: var(--ink, #1a231f);
+  }
+
+  /* Styling icon/logo jantan dan betina */
+  .gender-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .gender-badge.jantan {
+    background-color: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+  }
+  .gender-badge.betina {
+    background-color: rgba(236, 72, 153, 0.12);
+    color: #db2777;
+  }
+
+  /* Styling teks deskripsi kecil di dalam dropdown */
+  .dropdown-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .dropdown-meta .spec-title {
+    font-weight: 600;
+  }
+  .dropdown-meta .spec-desc {
+    font-size: 0.72rem;
+    color: #727a75;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7H20M4 12H20M4 17H20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-morph" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM5 20a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-stomach" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8V14a4 4 0 0 1 8 0v6c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="icon-urogenital" viewBox="0 0 24 24"><path d="M12 21a7 7 0 0 0 7-7v-3a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-6 0v4H7a2 2 0 0 0-2 2v3a7 7 0 0 0 7 7z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../images/marmut/LOGO UNJ.png" class="brand-mark" alt="Logo UNJ">
+      <span class="brand-text">
+        <span class="name">Atlas Vertebrata</span>
+        <span class="sub">Struktur &amp; Perkembangan Hewan</span>
+      </span>
+    </a>
+    
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html">Beranda</a>
+      
+      <div class="dropdown">
+        <a href="#" class="nav-link">Ikan Mas</a>
+        <div class="dropdown-menu">
+          <a href="../animals/ikan-mas.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/ikan-mas-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Ikan Mas Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Katak</a>
+        <div class="dropdown-menu">
+          <a href="../animals/katak.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/katak-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Katak Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Kadal</a>
+        <div class="dropdown-menu">
+          <a href="../animals/kadal.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/kadal-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Kadal Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Marmut</a>
+        <div class="dropdown-menu">
+          <a href="../animals/marmut.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Jantan</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ jantan</span>
+            </div>
+          </a>
+          <a href="../animals/marmut-betina.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Marmut Betina</span>
+              <span class="spec-desc">Sistem anatomi &amp; organ betina</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Burung Dara</a>
+        <div class="dropdown-menu">
+          <a href="../animals/burung-dara-jantan-1.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K9)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 9</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-jantan-2.html">
+            <span class="gender-badge jantan">♂</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Jantan (K7)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 7</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-1.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K3)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 3</span>
+            </div>
+          </a>
+          <a href="../animals/burung-dara-betina-2.html">
+            <span class="gender-badge betina">♀</span>
+            <div class="dropdown-meta">
+              <span class="spec-title">Burung Dara Betina (K5)</span>
+              <span class="spec-desc">Dokumentasi Kelompok 5</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#tentang">Tentang</a>
+    </nav>
+    
+    <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="animal-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Beranda</a> <span class="sep">/</span> <a href="../index.html#koleksi">Koleksi Spesimen</a> <span class="sep">/</span> Katak</p>
+    <div class="animal-hero-top">
+      <div>
+        <h1>Katak <span style="font-weight:400;color:var(--text-mute)">(Betina)</span></h1>
+        <p class="sci-name-lg">Fejervarya sp.</p>
+      </div>
+      <div class="specimen-no"><strong>No. 02</strong>dari 05 spesimen</div>
+    </div>
+    
+    <div class="taxon-strip">
+      <div class="taxon-item"><span class="k">Kingdom</span><span class="v">Animalia</span></div>
+      <div class="taxon-item"><span class="k">Filum</span><span class="v">Chordata</span></div>
+      <div class="taxon-item"><span class="k">Kelas</span><span class="v">Amphibia</span></div>
+      <div class="taxon-item"><span class="k">Ordo</span><span class="v">Anura</span></div>
+      <div class="taxon-item"><span class="k">Famili</span><span class="v">Ranidae</span></div>
+      <div class="taxon-item"><span class="k">Genus</span><span class="v italic">Rana</span></div>
+      <div class="taxon-item"><span class="k">Spesies</span><span class="v italic">Rana sp.</span></div>
+    </div>
+
+    <div class="desc-box">
+      <h3>Deskripsi Singkat</h3>
+      <p>Katak merupakan hewan amfibi yang memiliki tubuh pendek, kulit lembap, dan kaki belakang yang panjang serta kuat untuk melompat dan berenang. Warna tubuh katak bervariasi, mulai dari hijau, cokelat, hingga keabu-abuan, yang membantu mereka berkamuflase di lingkungan sekitarnya. Mata katak menonjol dan dilengkapi dengan selaput pelindung khusus. Katak bernapas menggunakan paru-paru dan kulitnya yang lembap. Hewan ini umumnya hidup di daerah yang dekat dengan sumber air seperti kolam, sungai, sawah, dan rawa. Dari segi perilaku, katak dikenal aktif pada malam hari (nokturnal) dan sering mengeluarkan suara khas untuk menarik pasangan atau menandai wilayahnya. Katak berperan penting dalam ekosistem sebagai pengendali populasi serangga dan juga sebagai sumber makanan bagi berbagai hewan lain.</p>
+    </div>
+
+    <p class="animal-intro">Pengamatan spesimen katak betina ditujukan untuk mempelajari morfologi luar sebagai bagian dari adaptasi amfibi bimodal, struktur lipatan dermal penahan kelembapan, serta identifikasi anatomi visceral setelah pembedahan meliputi visualisasi ovarium (gonad), jalur gastrointestinal, dan organ ekskresi multilobus.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px">
+  <div class="container">
+
+    <!-- FOTO 1: SEBELUM DIBEDAH TAMPAK BELAKANG -->
+    <div class="organ-section" id="sebelum-belakang">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Morfologi Eksternal (Sebelum Dibedah - Tampak Belakang)</h2>
+      </div>
+      <p class="organ-note">Visualisasi topografi dorsal dan bagian posterior tubuh katak utuh untuk mengamati pola spesimen dan organ indra utama.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.1</span>
+            <img src="../images/katak/betina belum dibedah belakang.png" alt="Morfologi luar katak betina tampak belakang">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.1 (Tampak Belakang)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Snout</span>
+                  <div class="desc-inline">Bagian ujung kepala katak yang terletak di depan mata. Berfungsi membantu katak mencari makanan dan bernavigasi di lingkungan sekitarnya.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">External nares</span>
+                  <div class="desc-inline">Sepasang lubang hidung yang terletak pada bagian atas moncong. Berfungsi sebagai jalur masuk dan keluar udara saat bernapas.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Tympanum</span>
+                  <div class="desc-inline">Selaput pendengaran yang terletak di belakang mata. Berfungsi menerima getaran suara dan membantu proses pendengaran.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Brachium</span>
+                  <div class="desc-inline">Bagian tungkai depan yang menghubungkan bahu dengan lengan bawah. Berfungsi menopang tubuh saat bergerak.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Antebrachium</span>
+                  <div class="desc-inline">Bagian tungkai depan yang berada di antara lengan atas dan pergelangan tangan. Membantu pergerakan dan menopang tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Manus</span>
+                  <div class="desc-inline">Bagian ujung tungkai depan yang terdiri atas jari-jari. Digunakan untuk menopang tubuh dan mencengkeram permukaan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">7</span>
+                <span>
+                  <span class="term">Wrist</span>
+                  <div class="desc-inline">Sendi yang menghubungkan lengan bawah dengan telapak tangan. Memungkinkan gerakan yang lebih fleksibel.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Belly</span>
+                  <div class="desc-inline">Bagian bawah tubuh katak yang umumnya berwarna lebih terang. Melindungi organ-organ dalam tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Pes</span>
+                  <div class="desc-inline">Bagian ujung tungkai belakang yang biasanya memiliki selaput renang. Membantu katak berenang dan melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <span>
+                  <span class="term">Sole</span>
+                  <div class="desc-inline">Permukaan bawah kaki yang bersentuhan langsung dengan tanah atau permukaan lainnya saat bergerak.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">11</span>
+                <span>
+                  <span class="term">Ankle</span>
+                  <div class="desc-inline">Sendi yang menghubungkan tungkai bawah dengan kaki belakang. Berperan dalam gerakan melompat dan berenang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">12</span>
+                <span>
+                  <span class="term">Lower leg</span>
+                  <div class="desc-inline">Bagian kaki belakang yang berada di antara lutut dan pergelangan kaki. Memberikan tenaga saat melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">13</span>
+                <span>
+                  <span class="term">Knee</span>
+                  <div class="desc-inline">Sendi yang menghubungkan paha dengan tungkai bawah. Memungkinkan kaki belakang menekuk dan melurus.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">14</span>
+                <span>
+                  <span class="term">Upper leg</span>
+                  <div class="desc-inline">Bagian kaki belakang yang paling besar dan berotot. Menjadi sumber utama tenaga untuk melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">15</span>
+                <span>
+                  <span class="term">Mid-dorsal line</span>
+                  <div class="desc-inline">Garis yang membentang di bagian tengah punggung beberapa spesies katak. Sering digunakan sebagai ciri identifikasi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">16</span>
+                <span>
+                  <span class="term">Dermal plicae</span>
+                  <div class="desc-inline">Lipatan atau tonjolan kulit yang biasanya terdapat di sepanjang sisi tubuh atau punggung. Berfungsi sebagai ciri morfologi dan dapat membantu perlindungan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">17</span>
+                <span>
+                  <span class="term">Nictating membrane</span>
+                  <div class="desc-inline">Selaput bening yang dapat menutupi mata. Berfungsi melindungi mata sekaligus menjaga penglihatan saat katak berada di dalam air.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 10</div>
+      </div>
+    </div>
+
+    <!-- FOTO 2: SEBELUM DIBEDAH TAMPAK DEPAN -->
+    <div class="organ-section" id="sebelum-depan" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-morph"/></svg></span>
+        <h2>Morfologi Eksternal (Sebelum Dibedah - Tampak Depan)</h2>
+      </div>
+      <p class="organ-note">Dokumentasi bagian ventral dan anterior tubuh katak sebelum insisi rongga tubuh dilakukan.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 1.2</span>
+            <img src="../images/katak/betina belum dibedah depan.png" alt="Morfologi luar katak betina tampak depan">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 1.2 (Tampak Depan)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">1</span>
+                <span>
+                  <span class="term">Snout</span>
+                  <div class="desc-inline">Bagian ujung kepala katak yang terletak di depan mata. Berfungsi membantu katak mencari makanan dan bernavigasi di lingkungan sekitarnya.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">2</span>
+                <span>
+                  <span class="term">External nares</span>
+                  <div class="desc-inline">Sepasang lubang hidung yang terletak pada bagian atas moncong. Berfungsi sebagai jalur masuk dan keluar udara saat bernapas.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Tympanum</span>
+                  <div class="desc-inline">Selaput pendengaran yang terletak di belakang mata. Berfungsi menerima getaran suara dan membantu proses pendengaran.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Elbow</span>
+                  <div class="desc-inline">Sendi siku yang menghubungkan lengan atas (brachium) dan lengan bawah (antebrachium) untuk pergerakan tungkai depan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Manus</span>
+                  <div class="desc-inline">Bagian ujung tungkai depan yang terdiri atas jari-jari. Digunakan untuk menopang tubuh dan mencengkeram permukaan.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Antebrachium (Lower arm)</span>
+                  <div class="desc-inline">Bagian tungkai depan yang berada di antara lengan atas dan pergelangan tangan. Membantu pergerakan dan menopang tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">8</span>
+                <span>
+                  <span class="term">Belly</span>
+                  <div class="desc-inline">Bagian bawah tubuh katak yang umumnya berwarna lebih terang. Melindungi organ-organ dalam tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Pes</span>
+                  <div class="desc-inline">Bagian ujung tungkai belakang yang biasanya memiliki selaput renang. Membantu katak berenang dan melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <span>
+                  <span class="term">Sole</span>
+                  <div class="desc-inline">Permukaan bawah kaki yang bersentuhan langsung dengan tanah atau permukaan lainnya saat bergerak.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">11</span>
+                <span>
+                  <span class="term">Ankle</span>
+                  <div class="desc-inline">Sendi yang menghubungkan tungkai bawah dengan kaki belakang. Berperan dalam gerakan melompat dan berenang.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">12</span>
+                <span>
+                  <span class="term">Lower leg</span>
+                  <div class="desc-inline">Bagian kaki belakang yang berada di antara lutut dan pergelangan kaki. Memberikan tenaga saat melompat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">13</span>
+                <span>
+                  <span class="term">Knee</span>
+                  <div class="desc-inline">Sendi yang menghubungkan paha dengan tungkai bawah. Memungkinkan kaki belakang menekuk dan melurus.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 10</div>
+      </div>
+    </div>
+
+    <!-- FOTO 3: SESUDAH DIBEDAH -->
+    <div class="organ-section" id="dalam-bagian1" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-stomach"/></svg></span>
+        <h2>Anatomi Internal I (Situs Viscerum Utama)</h2>
+      </div>
+      <p class="organ-note">Visualisasi topografi organ visceral setelah kulit abdominopelvis disingkap, menampilkan susunan organ pencernaan dan respirasi awal.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 2.1</span>
+            <img src="../images/katak/betina sudah dibedah.png" alt="Anatomi dalam katak betina setelah dibedah">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 2.1 (Setelah Dibedah)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Heart</span>
+                  <div class="desc-inline">Organ pemompa darah yang terdiri atas tiga ruang, yaitu dua serambi (atrium) dan satu bilik (ventrikel). Berfungsi mengedarkan darah ke seluruh tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Fat bodies</span>
+                  <div class="desc-inline">Jaringan berwarna kuning atau jingga yang berfungsi menyimpan cadangan energi untuk hibernasi dan reproduksi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Stomach</span>
+                  <div class="desc-inline">Organ pencernaan yang berfungsi menampung sementara makanan dan mencernanya secara mekanis maupun kimiawi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">6</span>
+                <span>
+                  <span class="term">Gall bladder</span>
+                  <div class="desc-inline">Kantung kecil yang terletak di bawah hati. Berfungsi menyimpan empedu yang membantu proses pencernaan lemak di usus halus.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">13</span>
+                <span>
+                  <span class="term">Cloaca</span>
+                  <div class="desc-inline">Ruang akhir yang menjadi muara bersama bagi sistem pencernaan (feses), ekskresi (urin), dan saluran reproduksi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">14</span>
+                <span>
+                  <span class="term">Large intestine</span>
+                  <div class="desc-inline">Bagian usus yang berfungsi menyerap air dari sisa makanan dan membentuk feses sebelum dikeluarkan melalui kloaka.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">18</span>
+                <span>
+                  <span class="term">Mesentery</span>
+                  <div class="desc-inline">Selaput tipis yang menggantung dan menahan usus di dalam rongga tubuh agar posisinya tetap terjaga stabil.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">19</span>
+                <span>
+                  <span class="term">Gonad</span>
+                  <div class="desc-inline">Organ reproduksi berupa ovarium pada katak betina yang berfungsi menghasilkan sel telur (ovum).</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">20</span>
+                <span>
+                  <span class="term">Liver</span>
+                  <div class="desc-inline">Organ terbesar dalam rongga tubuh katak yang berfungsi menghasilkan empedu, menyimpan nutrisi, dan detoksifikasi.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">21</span>
+                <span>
+                  <span class="term">Lungs</span>
+                  <div class="desc-inline">Organ pernapasan berbentuk kantung elastis untuk pertukaran oksigen dan karbon dioksida saat katak berada di darat.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">22</span>
+                <span>
+                  <span class="term">Esophagus</span>
+                  <div class="desc-inline">Saluran muscular pendek yang menyalurkan makanan yang ditelan dari rongga mulut menuju ke lambung.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 10</div>
+      </div>
+    </div>
+
+    <!-- FOTO 4: SESUDAH DIBEDAH LEBIH LANJUT -->
+    <div class="organ-section" id="dalam-bagian2" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-urogenital"/></svg></span>
+        <h2>Anatomi Internal II (Sesudah Dibedah Lebih Lanjut)</h2>
+      </div>
+      <p class="organ-note">Pengamatan mendalam situs pencernaan usus halus yang direnggangkan serta pengamatan anatomi ovarium (gonad) betina secara detail.</p>
+
+      <div class="annotated-card">
+        <div class="annotated-inner wide-img">
+          <div class="annotated-photo">
+            <span class="fig-badge">GAMBAR 3.1</span>
+            <img src="../images/katak/betina dibedah lebih lanjut.png" alt="Anatomi sirkulasi dan pencernaan katak betina detail">
+          </div>
+          <div class="annotated-labels">
+            <span class="section-title">Keterangan Gambar 3.1 (Dibedah Lebih Lanjut)</span>
+            <ol class="annotation-list">
+              <li>
+                <span class="num">3</span>
+                <span>
+                  <span class="term">Heart</span>
+                  <div class="desc-inline">Organ sirkulasi utama penunjang sistem sirkulasi ganda amfibi, memompa darah menuju paru-paru, kulit, dan sistemik tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">4</span>
+                <span>
+                  <span class="term">Fat bodies</span>
+                  <div class="desc-inline">Struktur lemak berumbai kuning sebagai penyedia energi utama untuk sintesis vitelogenin di ovarium selama masa pematangan telur.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">5</span>
+                <span>
+                  <span class="term">Stomach</span>
+                  <div class="desc-inline">Kantong lambung besar berdinding tebal tempat terjadinya pemecahan bolus makanan secara mekanis dan enzimatik.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">9</span>
+                <span>
+                  <span class="term">Small intestine</span>
+                  <div class="desc-inline">Bagian saluran pencernaan tempat berlangsungnya pencernaan lanjutan dan penyerapan sebagian besar zat makanan yang dibutuhkan tubuh.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">19</span>
+                <span>
+                  <span class="term">Gonad</span>
+                  <div class="desc-inline">Sepasang ovarium katak betina yang membesar berisi kelompok ovum berpigmen hitam-putih jika dalam fase siap memijah.</div>
+                </span>
+              </li>
+              <li>
+                <span class="num">20</span>
+                <span>
+                  <span class="term">Liver</span>
+                  <div class="desc-inline">Kelenjar hati multilobus yang berfungsi memproduksi cairan empedu untuk emulsifikasi lemak serta penyeimbang metabolik tubuh.</div>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="photo-source">Sumber: Dokumentasi Kelompok 10</div>
+      </div>
+    </div>
+
+    <!-- INFORMASI TAMBAHAN -->
+    <div class="organ-section" id="info-tambahan" style="border-top:1px solid var(--line)">
+      <div class="organ-head">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><use href="#icon-info"/></svg></span>
+        <h2>Informasi Tambahan</h2>
+      </div>
+      <p class="organ-note">Daftar fungsi fisiologis lengkap dan uraian struktural sistem organ yang diidentifikasi dari spesimen katak betina.</p>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+          <span class="info-term">Snout (Moncong)</span>
+          <p class="info-desc">Bagian ujung kepala katak yang terletak di depan mata. Berfungsi membantu katak mencari makanan dan bernavigasi di lingkungan sekitarnya.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">External nares (Lubang hidung luar)</span>
+          <p class="info-desc">Sepasang lubang hidung yang terletak pada bagian atas moncong. Berfungsi sebagai jalur masuk dan keluar udara saat bernapas.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Tympanum (Membran timpani)</span>
+          <p class="info-desc">Selaput pendengaran yang terletak di belakang mata. Berfungsi menerima getaran suara dan membantu proses pendengaran.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Brachium (Lengan atas)</span>
+          <p class="info-desc">Bagian tungkai depan yang menghubungkan bahu dengan lengan bawah. Berfungsi menopang tubuh saat bergerak.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Antebrachium (Lengan bawah)</span>
+          <p class="info-desc">Bagian tungkai depan yang berada di antara lengan atas dan pergelangan tangan. Membantu pergerakan dan menopang tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Manus (Telapak tangan)</span>
+          <p class="info-desc">Bagian ujung tungkai depan yang terdiri atas jari-jari. Digunakan untuk menopang tubuh dan mencengkeram permukaan.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Wrist (Pergelangan tangan)</span>
+          <p class="info-desc">Sendi yang menghubungkan lengan bawah dengan telapak tangan. Memungkinkan gerakan yang lebih fleksibel.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Belly (Perut)</span>
+          <p class="info-desc">Bagian bawah tubuh katak yang umumnya berwarna lebih terang. Melindungi organ-organ dalam tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Pes (Telapak kaki belakang)</span>
+          <p class="info-desc">Bagian ujung tungkai belakang yang biasanya memiliki selaput renang. Membantu katak berenang dan melompat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Sole (Telapak kaki)</span>
+          <p class="info-desc">Permukaan bawah kaki yang bersentuhan langsung dengan tanah atau permukaan lainnya saat bergerak.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Ankle (Pergelangan kaki)</span>
+          <p class="info-desc">Sendi yang menghubungkan tungkai bawah dengan kaki belakang. Berperan dalam gerakan melompat dan berenang.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Lower leg (Tungkai bawah)</span>
+          <p class="info-desc">Bagian kaki belakang yang berada di antara lutut dan pergelangan kaki. Memberikan tenaga saat melompat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Knee (Lutut)</span>
+          <p class="info-desc">Sendi yang menghubungkan paha dengan tungkai bawah. Memungkinkan kaki belakang menekuk dan melurus.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Upper leg (Paha)</span>
+          <p class="info-desc">Bagian kaki belakang yang paling besar dan berotot. Menjadi sumber utama tenaga untuk melompat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mid-dorsal line (Garis punggung tengah)</span>
+          <p class="info-desc">Garis yang membentang di bagian tengah punggung beberapa spesies katak. Sering digunakan sebagai ciri identifikasi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Dermal plicae (Lipatan kulit)</span>
+          <p class="info-desc">Lipatan atau tonjolan kulit yang biasanya terdapat di sepanjang sisi tubuh atau punggung. Berfungsi sebagai ciri morfologi dan dapat membantu perlindungan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Nictating membrane (Membran niktitans)</span>
+          <p class="info-desc">Selaput bening yang dapat menutupi mata. Berfungsi melindungi mata sekaligus menjaga penglihatan saat katak berada di dalam air.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Heart (Jantung)</span>
+          <p class="info-desc">Organ pemompa darah yang terdiri atas tiga ruang, yaitu dua serambi (atrium) dan satu bilik (ventrikel). Berfungsi mengedarkan darah yang membawa oksigen dan zat makanan ke seluruh tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Fat Bodies (Badan lemak)</span>
+          <p class="info-desc">Jaringan berwarna kuning atau jingga yang berfungsi menyimpan cadangan energi. Cadangan ini digunakan saat hibernasi, reproduksi, atau ketika makanan sulit diperoleh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Stomach (Lambung)</span>
+          <p class="info-desc">Organ pencernaan yang berfungsi menampung sementara makanan dan mencerna makanan secara mekanis maupun kimiawi dengan bantuan enzim dan asam lambung.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Gall Bladder (Kantung empedu)</span>
+          <p class="info-desc">Kantung kecil yang terletak di bawah hati. Berfungsi menyimpan empedu yang membantu proses pencernaan lemak di usus halus.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Small Intestine (Usus halus)</span>
+          <p class="info-desc">Bagian saluran pencernaan tempat berlangsungnya pencernaan lanjutan dan penyerapan sebagian besar zat makanan yang dibutuhkan tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Cloaca (Kloaka)</span>
+          <p class="info-desc">Ruang akhir yang menjadi muara sistem pencernaan, ekskresi, dan reproduksi. Melalui kloaka, sisa makanan, urin, dan produk reproduksi dikeluarkan dari tubuh.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Large Intestine (Usus besar)</span>
+          <p class="info-desc">Bagian usus yang berfungsi menyerap air dari sisa makanan dan membentuk feses sebelum dikeluarkan melalui kloaka.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Mesentery (Mesenterium)</span>
+          <p class="info-desc">Selaput tipis yang menggantung dan menahan usus di dalam rongga tubuh. Berfungsi menjaga posisi organ pencernaan serta menjadi jalur pembuluh darah dan saraf.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Gonad (Ovarium)</span>
+          <p class="info-desc">Organ reproduksi berupa ovarium pada katak betina. Berfungsi menghasilkan sel telur (ovum) serta memproduksi hormon reproduksi penunjang siklus ovulasi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Liver (Hati)</span>
+          <p class="info-desc">Organ terbesar dalam rongga tubuh katak yang umumnya terdiri atas beberapa lobus. Berfungsi menghasilkan empedu, menyimpan cadangan nutrisi, dan membantu proses detoksifikasi.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Lungs (Paru-paru)</span>
+          <p class="info-desc">Organ pernapasan yang berbentuk kantung elastis. Berfungsi melakukan pertukaran gas oksigen dan karbon dioksida, terutama saat katak berada di darat.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-term">Esophagus (Kerongkongan)</span>
+          <p class="info-desc">Saluran yang menghubungkan rongga mulut dengan lambung. Berfungsi menyalurkan makanan yang ditelan menuju lambung untuk dicerna lebih lanjut.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="name">Atlas Vertebrata</span>
+        <p>Atlas digital struktur dan perkembangan hewan, disusun dari dokumentasi praktikum anatomi perbandingan untuk spesies vertebrata jantan dan betina.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Koleksi Spesimen</h4>
+        <ul style="line-height: 1.6;">
+          <li>Ikan Mas (<a href="animals/ikan-mas.html">Jantan</a> / <a href="animals/ikan-mas-betina.html">Betina</a>)</li>
+          <li>Katak (<a href="animals/katak.html">Jantan</a> / <a href="animals/katak-betina.html">Betina</a>)</li>
+          <li>Kadal (<a href="animals/kadal.html">Jantan</a> / <a href="animals/kadal-betina.html">Betina</a>)</li>
+          <li>Marmut (<a href="animals/marmut.html">Jantan</a> / <a href="animals/marmut-betina.html">Betina</a>)</li>
+          <li>Burung Dara ♂ (<a href="animals/burung-dara-jantan-1.html">Kel 9</a> / <a href="animals/burung-dara-jantan-2.html">Kel 7</a>)</li>
+          <li>Burung Dara ♀ (<a href="animals/burung-dara-betina-1.html">Kel 3</a> / <a href="animals/burung-dara-betina-2.html">Kel 5</a>)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atlas</h4>
+        <ul>
+          <li><a href="index.html#tentang">Tentang Atlas Ini</a></li>
+          <li><a href="index.html#koleksi">Koleksi Spesimen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Pendidikan Biologi, FMIPA, Universitas Negeri Jakarta</span>
+      <span>Disusun untuk kebutuhan praktikum anatomi perbandingan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
